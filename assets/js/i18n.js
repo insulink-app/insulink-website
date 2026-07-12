@@ -1,7 +1,8 @@
 /* Insulink i18n dictionary. Keys map to [data-i18n] / [data-i18n-html] in the HTML. */
 window.I18N = {
   en: {
-    "meta.title": "Insulink — Open-source glucose, your data",
+    "meta.title": "Insulink",
+    "hero.slogan": "Make diabetes easy.",
     "meta.desc": "Insulink is an open-source glucose ecosystem: live readings, your own dashboard and a predictor for what's coming — without the official app. Not a medical device.",
 
     "nav.idea": "Idea",
@@ -90,7 +91,8 @@ window.I18N = {
   },
 
   de: {
-    "meta.title": "Insulink — Open-Source-Glukose, deine Daten",
+    "meta.title": "Insulink",
+    "hero.slogan": "Diabetes leicht gemacht.",
     "meta.desc": "Insulink ist ein Open-Source-Glukose-Ökosystem: Live-Werte, dein eigenes Dashboard und ein Predictor für das, was kommt – ohne die offizielle App. Kein Medizinprodukt.",
 
     "nav.idea": "Idee",
