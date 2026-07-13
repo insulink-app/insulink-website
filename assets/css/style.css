@@ -85,7 +85,7 @@ img { max-width: 100%; }
   color: var(--text);
   background: transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   white-space: nowrap;
 }
 .btn:hover { border-color: var(--accent); color: var(--accent); }
@@ -122,7 +122,7 @@ img { max-width: 100%; }
   background: transparent;
   color: var(--muted);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: border-color 0.3s ease, color 0.3s ease;
   font-family: var(--font-head);
   font-weight: 600; font-size: 13px;
 }
@@ -167,15 +167,7 @@ section { padding: 90px 0; }
 
 /* ---------- hero ---------- */
 .hero { padding: 90px 0 70px; text-align: center; }
-.hero .badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 26px; }
-.pill {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 13px; font-weight: 600; color: var(--muted);
-  border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px;
-  background: var(--surface);
-}
-.pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
-.hero-slogan { color: var(--accent); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: clamp(14px, 1.6vw, 17px); margin: 0 0 14px; }
+.hero-slogan { color: var(--accent-2); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: clamp(14px, 1.6vw, 17px); margin: 0 0 14px; }
 .hero h1 { font-size: clamp(38px, 7vw, 72px); margin: 0 auto 22px; max-width: 15ch; }
 .hero p.lead { color: var(--muted); font-size: clamp(17px, 2.2vw, 21px); max-width: 640px; margin: 0 auto 34px; }
 .hero .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -197,7 +189,7 @@ section { padding: 90px 0; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 30px;
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 0 30px var(--glow); }
 .card.featured {
@@ -254,8 +246,9 @@ section { padding: 90px 0; }
   padding: 4px 22px;
   margin-bottom: 14px;
   background: var(--surface);
-  transition: border-color 0.2s;
+  transition: border-color 0.3s ease;
 }
+.faq details:hover { border-color: var(--border-strong); }
 .faq details[open] { border-color: var(--accent); }
 .faq summary {
   cursor: pointer; list-style: none;
@@ -287,14 +280,16 @@ section { padding: 90px 0; }
 .footer-brand .brand { margin-bottom: 14px; }
 .footer-brand p { font-size: 14px; margin: 0; }
 .footer-cols { display: flex; gap: 60px; flex-wrap: wrap; }
-.footer-col h4 { font-family: var(--font-head); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); margin: 0 0 14px; }
+.footer-col h3 { font-family: var(--font-head); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); margin: 0 0 14px; }
 .footer-col a { display: block; color: var(--muted); font-size: 14px; margin-bottom: 10px; transition: color 0.15s; }
 .footer-col a:hover { color: var(--accent); }
 .footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--border); padding-top: 26px; font-size: 13px; }
-.footer-disclaimer { max-width: 720px; font-size: 12px; margin-top: 20px; opacity: 0.8; }
+.footer-disclaimer { max-width: 720px; font-size: 12px; margin-top: 20px; }
 
 /* ---------- reveal animation ---------- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+/* reveal shares the element's transition, so list the hover props too (border/shadow),
+   otherwise this shorthand clobbers .card's transition and hovers snap instantly. */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; }
 .reveal.in-view { opacity: 1; transform: none; }
 
 /* ---------- legal pages ---------- */

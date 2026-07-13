@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
   <title>Insulink</title>
-  <meta name="description" content="Insulink is an open-source glucose ecosystem: live readings, your own dashboard and a predictor for what's coming — without the official app. Not a medical device.">
+  <meta name="description" content="Insulink is an open-source glucose ecosystem: live readings, your own dashboard and a predictor for what's coming, without the official app. Not a medical device.">
   <meta property="og:title" content="Insulink">
-  <meta property="og:description" content="An open-source glucose ecosystem — live readings, your dashboard and a predictor, without the vendor lock-in.">
+  <meta property="og:description" content="An open-source glucose ecosystem: live readings, your dashboard and a predictor, without the vendor lock-in.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://insulink.de/">
   <link rel="icon" href="assets/img/icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
     // apply theme before paint to avoid a flash
@@ -42,7 +43,7 @@
       </nav>
       <div class="header-actions">
         <div class="lang-dd" id="lang-dd">
-          <button class="icon-btn lang-current" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
+          <button class="icon-btn lang-current" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" title="Switch language">
             <span class="flag" data-flag>🇬🇧</span><span class="lang-code" data-code>EN</span>
           </button>
           <ul class="lang-menu" role="listbox" aria-label="Language">
@@ -68,20 +69,16 @@
     <!-- HERO -->
     <section class="hero">
       <div class="wrap">
-        <div class="badges reveal">
-          <span class="pill"><span class="dot"></span><span data-i18n="hero.pill1">100% open source</span></span>
-          <span class="pill"><span data-i18n="hero.pill2">Not a medical device</span></span>
-        </div>
         <p class="hero-slogan reveal" data-i18n="hero.slogan">Make diabetes easy.</p>
         <h1 class="reveal" data-i18n-html="hero.title">Open-source glucose. <span class="accent">Your data.</span> Your rules.</h1>
-        <p class="lead reveal" data-i18n="hero.lead">Insulink is a fully open-source glucose ecosystem — read your CGM over Bluetooth, see it live, and let the predictor show you where you're heading. App, panel, API and forecasting, all open.</p>
+        <p class="lead reveal" data-i18n="hero.lead">Insulink is a fully open-source glucose ecosystem. Read your CGM over Bluetooth, watch it live, and let the predictor show you where you're heading. App, panel, API and forecasting, all open.</p>
         <div class="cta-row reveal">
           <a class="btn btn-primary" href="https://panel.insulink.de" data-i18n="hero.cta_primary">Open the panel</a>
           <a class="btn" href="#idea" data-i18n="hero.cta_secondary">Explore the idea</a>
         </div>
         <p class="risk-note reveal">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v5c0 5 4 8 9 10 5-2 9-5 9-10V7l-9-5z"/><path d="M12 8v4M12 16h.01"/></svg>
-          <span data-i18n="hero.risk">Use Insulink at your own risk — it's a companion for curious people, never a replacement for your approved devices or your care team.</span>
+          <span data-i18n="hero.risk">Use Insulink at your own risk. It's a companion for curious people, never a replacement for your approved devices or your care team.</span>
         </p>
       </div>
     </section>
@@ -237,19 +234,19 @@
         </div>
         <div class="footer-cols">
           <div class="footer-col">
-            <h4 data-i18n="footer.col.product">Product</h4>
+            <h3 data-i18n="footer.col.product">Product</h3>
             <a href="#features" data-i18n="nav.features">Features</a>
             <a href="#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a>
             <a href="https://panel.insulink.de" data-i18n="footer.link.panel">Panel</a>
           </div>
           <div class="footer-col">
-            <h4 data-i18n="footer.col.project">Project</h4>
+            <h3 data-i18n="footer.col.project">Project</h3>
             <a href="#how" data-i18n="nav.how">How it works</a>
             <a href="#faq" data-i18n="nav.faq">FAQ</a>
             <a href="https://github.com/insulink-app" data-i18n="footer.link.github">GitHub</a>
           </div>
           <div class="footer-col">
-            <h4 data-i18n="footer.col.legal">Legal</h4>
+            <h3 data-i18n="footer.col.legal">Legal</h3>
             <a href="imprint.html" data-i18n="footer.imprint">Imprint</a>
             <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
           </div>
