@@ -178,6 +178,60 @@ section { padding: 90px 0; }
 }
 .risk-note svg { flex-shrink: 0; color: var(--accent); }
 
+/* screenshot in a CSS phone frame (no notch: the screenshot has its own status bar) */
+.phone {
+  width: 300px;
+  max-width: 76vw;
+  padding: 11px;
+  background: #0b0b0e;
+  border-radius: 46px;
+  box-shadow: 0 0 0 2px var(--border-strong), 0 30px 70px rgba(0, 0, 0, 0.55), 0 0 70px var(--glow);
+  will-change: transform;
+}
+/* two stacked screens crossfade: base holds the current shot, top fades the next one in over it */
+.phone-screen { position: relative; border-radius: 36px; overflow: hidden; }
+.phone .shot { display: block; width: 100%; height: auto; }
+.phone .shot-top { position: absolute; inset: 0; opacity: 0; transition: opacity 0.6s ease; }
+
+/* ---------- scrollytelling ---------- */
+.scrolly { padding: 40px 0; }
+.scrolly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.scrolly-steps { padding: 8vh 0; }
+.scrolly-steps .eyebrow { margin-bottom: 0; }
+.scrolly-step {
+  min-height: 78vh;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0.35;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(12px);
+}
+.scrolly-step.active { opacity: 1; transform: none; }
+.scrolly-step h3 { font-size: clamp(26px, 3.4vw, 38px); margin: 0 0 14px; }
+.scrolly-step p { color: var(--muted); font-size: 18px; max-width: 40ch; margin: 0; }
+
+.scrolly-stage {
+  position: sticky; top: 0;
+  height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+}
+/* two layers so the WHOLE phone moves: outer tilts with scroll (--p from JS),
+   the phone frame itself floats on a timer (bezel + screen together). */
+.phone-tilt {
+  transform: perspective(1400px)
+    rotateY(calc((0.5 - var(--p, 0.5)) * 26deg))
+    rotateX(calc((var(--p, 0.5) - 0.5) * 8deg));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .scrolly-stage .phone { animation: phone-float 6s ease-in-out infinite; }
+  @keyframes phone-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .phone-tilt { transform: none; }
+}
+
 /* ---------- feature grid ---------- */
 .grid { display: grid; gap: 22px; }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
@@ -310,6 +364,11 @@ section { padding: 90px 0; }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .eco { flex-direction: column; }
   .footer-top { flex-direction: column; }
+  /* stack scrollytelling: phone on top, sticky under the header; steps scroll below */
+  .scrolly-grid { grid-template-columns: 1fr; gap: 0; }
+  .scrolly-stage { order: -1; height: auto; top: 72px; padding: 20px 0; }
+  .scrolly-steps { padding: 0 0 6vh; }
+  .scrolly-step { min-height: 62vh; }
 }
 @media (max-width: 760px) {
   .nav-links { display: none; }

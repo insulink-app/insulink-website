@@ -28,6 +28,14 @@ window.I18N = {
     "idea.p3.title": "Patterns, not prescriptions",
     "idea.p3.text": "Insulink surfaces trends and insights to help you understand your day. It never tells you how to treat.",
 
+    "scrolly.eyebrow": "Live on your phone",
+    "scrolly.1.title": "Your day at a glance",
+    "scrolly.1.text": "The current value with trend arrow, the last 24 hours as a chart and your time in range, all on one screen.",
+    "scrolly.2.title": "Activity and health",
+    "scrolly.2.text": "Steps, distance, calories, weight and heart rate next to your own training routines. Insulink puts your glucose in the context of your day.",
+    "scrolly.3.title": "Straight from the sensor",
+    "scrolly.3.text": "Your FreeStyle Libre 3 connects directly over Bluetooth. See the live reading, the sensor temperature and how many days are left, with no vendor app in between.",
+
     "features.eyebrow": "Features",
     "features.title": "Everything around your reading",
     "features.lead": "From the live number on your phone to long-term patterns in your browser.",
@@ -115,6 +123,14 @@ window.I18N = {
     "idea.p2.text": "Wirklich jeder Teil ist Open Source (GPL / AGPL). Lies den Code, hoste das Backend selbst und prüf nach, was tatsächlich läuft. Keine Blackbox.",
     "idea.p3.title": "Muster statt Vorgaben",
     "idea.p3.text": "Insulink zeigt dir Trends und Zusammenhänge, damit du deinen Tag besser verstehst. Wie du behandelst, sagt es dir nie.",
+
+    "scrolly.eyebrow": "Live auf deinem Handy",
+    "scrolly.1.title": "Dein Tag auf einen Blick",
+    "scrolly.1.text": "Der aktuelle Wert mit Trendpfeil, die letzten 24 Stunden als Diagramm und deine Zeit im Zielbereich, alles auf einem Bildschirm.",
+    "scrolly.2.title": "Aktivität und Gesundheit",
+    "scrolly.2.text": "Schritte, Distanz, Kalorien, Gewicht und Puls neben deinen eigenen Trainingsroutinen. Insulink sieht deine Glukose im Zusammenhang mit deinem Tag.",
+    "scrolly.3.title": "Direkt vom Sensor",
+    "scrolly.3.text": "Dein FreeStyle Libre 3 verbindet sich direkt über Bluetooth. Sieh den Live-Wert, die Sensortemperatur und wie viele Tage noch bleiben, ohne Hersteller-App dazwischen.",
 
     "features.eyebrow": "Funktionen",
     "features.title": "Alles rund um deinen Wert",
