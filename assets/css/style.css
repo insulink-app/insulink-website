@@ -206,6 +206,8 @@ section { padding: 90px 0; }
   transform: translateY(12px);
 }
 .scrolly-step.active { opacity: 1; transform: none; }
+/* per-step phone, only used by the stacked mobile layout (the pinned stage covers desktop) */
+.step-shot { display: none; }
 .scrolly-step h3 { font-size: clamp(26px, 3.4vw, 38px); margin: 0 0 14px; }
 .scrolly-step p { color: var(--muted); font-size: 18px; max-width: 40ch; margin: 0; }
 
@@ -364,11 +366,16 @@ section { padding: 90px 0; }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .eco { flex-direction: column; }
   .footer-top { flex-direction: column; }
-  /* stack scrollytelling: phone on top, sticky under the header; steps scroll below */
+  /* no room to pin a phone AND read text on a narrow screen, so drop the scrollytelling:
+     each step carries its own phone and just scrolls. The pinned stage is desktop-only. */
+  .scrolly { padding: 20px 0; }
   .scrolly-grid { grid-template-columns: 1fr; gap: 0; }
-  .scrolly-stage { order: -1; height: auto; top: 72px; padding: 20px 0; }
-  .scrolly-steps { padding: 0 0 6vh; }
-  .scrolly-step { min-height: 62vh; }
+  .scrolly-stage { display: none; }
+  .scrolly-steps { padding: 0; }
+  .scrolly-steps .eyebrow { margin-bottom: 16px; }
+  .scrolly-step { min-height: 0; padding: 40px 0; opacity: 1; transform: none; }
+  .scrolly-step p { max-width: none; }
+  .step-shot { display: flex; justify-content: center; margin-bottom: 40px; }
 }
 @media (max-width: 760px) {
   .nav-links { display: none; }
@@ -385,5 +392,20 @@ section { padding: 90px 0; }
 @media (max-width: 560px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   section { padding: 64px 0; }
+  .hero { padding: 64px 0 50px; }
   .step { flex-direction: column; gap: 14px; }
+  .card { padding: 24px; }
+  .cta-box { padding: 48px 20px; }
+  .footer-cols { gap: 32px; }
+  .legal h1 { font-size: clamp(28px, 8vw, 40px); }
+}
+/* the header row (brand + lang + theme + login + burger) outgrows the viewport here */
+@media (max-width: 430px) {
+  .site-header .wrap { gap: 10px; }
+  .header-actions { gap: 6px; }
+  .brand { font-size: 17px; }
+  .brand img { width: 26px; height: 26px; }
+  .icon-btn { width: 36px; height: 36px; }
+  .header-actions .btn { padding: 10px 14px; }
+  .lang-dd .lang-current { padding: 0 10px; }
 }
