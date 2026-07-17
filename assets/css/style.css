@@ -1,36 +1,40 @@
-/* Insulink — project homepage. Dark/light, indigo accent, GitHub-style dark base. */
+/* Insulink — project homepage. Dark/light, slate-blue brand.
+   Palette mirrors the mobile app's theme tokens (see
+   `insulink-app/lib/src/theme/app_theme.dart`) so the site, app and panel read
+   as one product. Keep these in sync with that file. */
 
 :root {
-  --bg: #0d1117;
-  --surface: #161b22;
-  --surface-2: #1c2430;
-  --border: #30363d;
-  --border-strong: #4b4d55;
-  --text: #e6edf3;
-  --muted: #8b949e;
-  --accent: #536dfe;      /* Insulink indigoAccent */
-  --accent-2: #7c8cff;
-  --accent-strong: #3f51b5;
-  --glow: rgba(83, 109, 254, 0.45);
-  --danger: #f0616d;
-  --radius: 18px;
+  --bg: #15181d;          /* _darkBg */
+  --surface: #1f232a;     /* _darkSurface */
+  --surface-2: #2a2f38;   /* _darkSurfaceRaised */
+  --border: #2b3038;      /* _darkBorder */
+  --border-strong: #464d5a; /* _darkOutline */
+  --text: #e8ebf0;
+  --muted: #a6aebf;       /* _darkMuted */
+  --accent: #5d73cc;      /* darkPrimary (fill) */
+  --accent-2: #9dacea;    /* darkAccent (drawn on a surface) */
+  --accent-strong: #45569f; /* lightPrimary — deep gradient anchor */
+  --glow: rgba(93, 115, 204, 0.42);
+  --danger: #e0533d;      /* _darkError */
+  --radius: 16px;
   --maxw: 1120px;
   --font-head: "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
 }
 
 :root[data-theme="light"] {
-  --bg: #ffffff;
-  --surface: #f6f8fa;
-  --surface-2: #eef1f6;
-  --border: #d0d7de;
-  --border-strong: #c0c7d0;
-  --text: #1f2328;
-  --muted: #59636e;
-  --accent: #3f51b5;
-  --accent-2: #536dfe;
-  --accent-strong: #283593;
-  --glow: rgba(63, 81, 181, 0.3);
+  --bg: #fafafa;          /* _lightBg */
+  --surface: #e8e8e8;     /* _lightSurface */
+  --surface-2: #d8dce3;   /* _lightSurfaceRaised */
+  --border: #d7dbe2;      /* _lightBorder */
+  --border-strong: #b4b9c2; /* _lightOutline */
+  --text: #1b1f27;
+  --muted: #5a6070;       /* _lightMuted */
+  --accent: #45569f;      /* lightPrimary */
+  --accent-2: #5d73cc;
+  --accent-strong: #3a4890;
+  --glow: rgba(69, 86, 159, 0.28);
+  --danger: #c42108;      /* _lightError */
 }
 
 * { box-sizing: border-box; }
@@ -113,6 +117,17 @@ img { max-width: 100%; }
 .nav-links a { color: var(--muted); font-size: 15px; font-weight: 500; transition: color 0.15s; }
 .nav-links a:hover { color: var(--text); }
 .header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+
+/* ---------- Phosphor icons ---------- */
+/* Web-font glyphs sized via font-size (not width/height). */
+.icon-btn .ph { font-size: 19px; line-height: 1; }
+.btn .ph { font-size: 17px; line-height: 1; }
+.card .card-icon .ph { font-size: 26px; line-height: 1; }
+.risk-note .ph { flex-shrink: 0; color: var(--accent); font-size: 20px; margin-top: 1px; }
+/* Theme toggle: sun in dark mode, moon in light. */
+.theme-moon { display: none; }
+:root[data-theme="light"] .theme-sun { display: none; }
+:root[data-theme="light"] .theme-moon { display: inline-flex; }
 
 .icon-btn {
   width: 40px; height: 40px;
