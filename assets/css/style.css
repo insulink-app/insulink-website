@@ -112,7 +112,9 @@ img { max-width: 100%; }
 }
 .site-header .wrap { display: flex; align-items: center; gap: 20px; height: 72px; }
 .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-weight: 700; font-size: 20px; }
-.brand img { width: 30px; height: 30px; border-radius: 8px; }
+/* Plain logo, no plate — the white glyph is swapped for the black one on light. */
+.brand img { width: 34px; height: 34px; }
+:root[data-theme="light"] .brand img { content: url("../img/logo-black.png"); }
 .nav-links { display: flex; gap: 28px; margin-left: 24px; }
 .nav-links a { color: var(--muted); font-size: 15px; font-weight: 500; transition: color 0.15s; }
 .nav-links a:hover { color: var(--text); }
