@@ -4,18 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
-  <title>Insulink</title>
+  <title>Insulink: open-source glucose ecosystem</title>
+  <link rel="canonical" href="https://insulink.de/">
+  <meta name="theme-color" content="#3a4890">
   <meta name="description" content="Insulink is an open-source glucose ecosystem: live readings, your own dashboard and a predictor for what's coming, without the official app. Not a medical device.">
   <meta property="og:title" content="Insulink">
   <meta property="og:description" content="An open-source glucose ecosystem: live readings, your dashboard and a predictor, without the vendor lock-in.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://insulink.de/">
+  <meta property="og:site_name" content="Insulink">
+  <meta property="og:image" content="https://insulink.de/assets/img/social.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Insulink website with the live app demo">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="apple-touch-icon" href="assets/img/icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Insulink",
+    "url": "https://insulink.de/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Android, Web",
+    "description": "An open-source glucose ecosystem that reads Dexcom G7 and FreeStyle Libre 3 sensors directly. Not a medical device.",
+    "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
   <link rel="icon" href="assets/img/icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preload" href="assets/fonts/phosphor-subset.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
     // apply theme before paint to avoid a flash
@@ -29,7 +51,7 @@
   </script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header on-hero">
     <div class="wrap">
       <a class="brand" href="#top">
         <img src="assets/img/logo-white.png" alt="Insulink logo">
@@ -40,6 +62,7 @@
         <a href="#features" data-i18n="nav.features">Features</a>
         <a href="#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a>
         <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#screens" data-i18n="nav.screens">Screenshots</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
       </nav>
       <div class="header-actions">
@@ -55,7 +78,7 @@
         <button class="icon-btn" id="theme-toggle" aria-label="Switch theme">
           <i class="ph ph-sun theme-sun"></i><i class="ph ph-moon theme-moon"></i>
         </button>
-        <a class="btn btn-primary" href="https://panel.insulink.de">
+        <a class="btn btn-primary" href="https://panel.insulink.de" aria-label="Login" data-i18n-attr="aria-label:nav.login">
           <i class="ph ph-sign-in"></i>
           <span class="login-label" data-i18n="nav.login">Login</span>
         </a>
@@ -69,55 +92,24 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <div class="wrap">
-        <p class="hero-slogan reveal" data-i18n="hero.slogan">Make diabetes easy.</p>
-        <h1 class="reveal" data-i18n-html="hero.title">Open-source glucose. <span class="accent">Your data.</span> Your rules.</h1>
-        <p class="lead reveal" data-i18n="hero.lead">Insulink is a fully open-source glucose ecosystem. Read your CGM over Bluetooth, watch it live, and let the predictor show you where you're heading. App, panel, API and forecasting, all open.</p>
-        <div class="cta-row reveal">
-          <a class="btn btn-primary" href="https://panel.insulink.de" data-i18n="hero.cta_primary">Open the panel</a>
-          <a class="btn" href="#idea" data-i18n="hero.cta_secondary">Explore the idea</a>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-slogan" data-i18n="hero.slogan">Make diabetes easy.</p>
+          <h1 data-i18n-html="hero.title"><span class="line">Your devices.</span> <span class="line accent">Your data.</span> <span class="line">Your rules.</span></h1>
+          <p class="lead" data-i18n="hero.lead">Insulink is a fully open-source glucose ecosystem. Read your CGM over Bluetooth, watch it live, and let the predictor show you where you're heading. App, panel, API and forecasting, all open.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://panel.insulink.de" data-i18n="hero.cta_primary">Open the panel</a>
+            <a class="btn" href="#idea" data-i18n="hero.cta_secondary">Explore the idea</a>
+          </div>
+          <p class="risk-note">
+            <i class="ph ph-shield-warning"></i>
+            <span data-i18n="hero.risk">Use Insulink at your own risk. It's a companion for curious people, never a replacement for your approved devices or your care team.</span>
+          </p>
         </div>
-        <p class="risk-note reveal">
-          <i class="ph ph-shield-warning"></i>
-          <span data-i18n="hero.risk">Use Insulink at your own risk. It's a companion for curious people, never a replacement for your approved devices or your care team.</span>
-        </p>
-      </div>
-    </section>
-
-    <!-- SCROLLYTELLING -->
-    <section class="scrolly" id="app">
-      <div class="wrap scrolly-grid">
-        <div class="scrolly-steps">
-          <span class="eyebrow" data-i18n="scrolly.eyebrow">Live on your phone</span>
-          <div class="scrolly-step" data-step="0" data-shot="assets/screenshot-1.png">
-            <div class="step-shot"><div class="phone"><div class="phone-screen">
-              <img class="shot" src="assets/screenshot-1.png" alt="The Insulink app showing the current reading and the last 24 hours" width="1080" height="2400" loading="lazy">
-            </div></div></div>
-            <h3 data-i18n="scrolly.1.title">Your day at a glance</h3>
-            <p data-i18n="scrolly.1.text">The current value with trend arrow, the last 24 hours as a chart and your time in range, all on one screen.</p>
-          </div>
-          <div class="scrolly-step" data-step="1" data-shot="assets/screenshot-2.png">
-            <div class="step-shot"><div class="phone"><div class="phone-screen">
-              <img class="shot" src="assets/screenshot-2.png" alt="The Insulink app showing activity and health data" width="1080" height="2400" loading="lazy">
-            </div></div></div>
-            <h3 data-i18n="scrolly.2.title">Activity and health</h3>
-            <p data-i18n="scrolly.2.text">Steps, distance, calories, weight and heart rate next to your own training routines. Insulink puts your glucose in the context of your day.</p>
-          </div>
-          <div class="scrolly-step" data-step="2" data-shot="assets/screenshot-3.png">
-            <div class="step-shot"><div class="phone"><div class="phone-screen">
-              <img class="shot" src="assets/screenshot-3.png" alt="The Insulink app showing the live sensor connection" width="1080" height="2400" loading="lazy">
-            </div></div></div>
-            <h3 data-i18n="scrolly.3.title">Straight from the sensor</h3>
-            <p data-i18n="scrolly.3.text">Your FreeStyle Libre 3 connects directly over Bluetooth. See the live reading, the sensor temperature and how many days are left, with no vendor app in between.</p>
-          </div>
-        </div>
-        <div class="scrolly-stage">
-          <div class="phone-tilt">
-            <div class="phone">
-              <div class="phone-screen">
-                <img class="shot shot-base" src="assets/screenshot-1.png" alt="The Insulink app on a phone" width="1080" height="2400" loading="lazy">
-                <img class="shot shot-top" src="assets/screenshot-1.png" alt="" aria-hidden="true" width="1080" height="2400">
-              </div>
+        <div class="hero-demo">
+          <div class="demo-phone">
+            <div class="demo-screen">
+              <iframe class="demo-frame" title="Insulink app demo with sample data" data-src="https://insulink-app.github.io/insulink-app/"></iframe>
             </div>
           </div>
         </div>
@@ -236,6 +228,76 @@
       </div>
     </section>
 
+    <!-- SCREENSHOTS -->
+    <section id="screens">
+      <div class="wrap">
+        <span class="eyebrow reveal" data-i18n="screens.eyebrow">Screenshots</span>
+        <h2 class="section-title reveal" data-i18n="screens.title">Every screen of the app</h2>
+        <p class="section-lead reveal" data-i18n="screens.lead">Captured on a phone, nothing mocked up. Pick one to flip through them full size.</p>
+        <div class="gallery-panel reveal">
+        <button class="icon-btn gallery-prev" type="button" aria-label="Previous" data-i18n-attr="aria-label:screens.prev"><i class="ph ph-caret-left"></i></button>
+        <div class="gallery">
+          <a href="assets/gallery/overview.webp"><img src="assets/gallery/thumbs/overview.webp" alt="Overview with the current reading, the last 24 hours and time in range" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/overview-bolus.webp"><img src="assets/gallery/thumbs/overview-bolus.webp" alt="Overview while a bolus is being delivered" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/glucose-chart.webp"><img src="assets/gallery/thumbs/glucose-chart.webp" alt="Glucose chart with meals, basal and bolus" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/sensor.webp"><img src="assets/gallery/thumbs/sensor.webp" alt="Connected Dexcom G7 with durability and sensor data" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/sensor-history.webp"><img src="assets/gallery/thumbs/sensor-history.webp" alt="History of all worn sensors" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/pump-empty.webp"><img src="assets/gallery/thumbs/pump-empty.webp" alt="Pump page with no pod paired" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/pod-priming.webp"><img src="assets/gallery/thumbs/pod-priming.webp" alt="Activating a pod: priming" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/pod-attach.webp"><img src="assets/gallery/thumbs/pod-attach.webp" alt="Activating a pod: attaching it to the body" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/pod-connecting.webp"><img src="assets/gallery/thumbs/pod-connecting.webp" alt="Activating a pod: connecting" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/pod-cannula.webp"><img src="assets/gallery/thumbs/pod-cannula.webp" alt="Activating a pod: inserting the cannula" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/pod-running.webp"><img src="assets/gallery/thumbs/pod-running.webp" alt="Activating a pod: pod is running" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/pump.webp"><img src="assets/gallery/thumbs/pump.webp" alt="Pump page with a running Omnipod DASH" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/bolus-calculator.webp"><img src="assets/gallery/thumbs/bolus-calculator.webp" alt="Bolus calculator with carbs and current glucose" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/bolus-confirm.webp"><img src="assets/gallery/thumbs/bolus-confirm.webp" alt="Confirming a bolus before it is sent to the pump" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/insulin-delivered.webp"><img src="assets/gallery/thumbs/insulin-delivered.webp" alt="Insulin delivered per hour" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/pump-history.webp"><img src="assets/gallery/thumbs/pump-history.webp" alt="History of all worn pods" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/inventory.webp"><img src="assets/gallery/thumbs/inventory.webp" alt="Inventory of sensors and pods" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/inventory-edit.webp"><img src="assets/gallery/thumbs/inventory-edit.webp" alt="Editing an inventory item and its deliveries" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/sport.webp"><img src="assets/gallery/thumbs/sport.webp" alt="Sport page with daily activity and routines" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/walk.webp"><img src="assets/gallery/thumbs/walk.webp" alt="Walk with route map and glucose, heart rate and speed trends" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/jog.webp"><img src="assets/gallery/thumbs/jog.webp" alt="Jog with route, trends and pace per kilometre" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/routine-result.webp"><img src="assets/gallery/thumbs/routine-result.webp" alt="Result of a finished routine" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/routine-edit.webp"><img src="assets/gallery/thumbs/routine-edit.webp" alt="Editing a training routine" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/routine-running.webp"><img src="assets/gallery/thumbs/routine-running.webp" alt="Running routine with live glucose and heart rate" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/exercise-stats.webp"><img src="assets/gallery/thumbs/exercise-stats.webp" alt="Exercise statistics and routines compared" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/exercises.webp"><img src="assets/gallery/thumbs/exercises.webp" alt="List of exercises" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/calendar.webp"><img src="assets/gallery/thumbs/calendar.webp" alt="Training calendar" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/nutrition.webp"><img src="assets/gallery/thumbs/nutrition.webp" alt="Nutrition page with carbs, hydration and meals" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/all-values.webp"><img src="assets/gallery/thumbs/all-values.webp" alt="All health values at a glance" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/sleep.webp"><img src="assets/gallery/thumbs/sleep.webp" alt="Sleep index, phases and timeline" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/weight.webp"><img src="assets/gallery/thumbs/weight.webp" alt="Weight history" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/bolus-history.webp"><img src="assets/gallery/thumbs/bolus-history.webp" alt="Bolus history" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/heart-rate.webp"><img src="assets/gallery/thumbs/heart-rate.webp" alt="Heart rate over the day" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/customize-boxes.webp"><img src="assets/gallery/thumbs/customize-boxes.webp" alt="Choosing and ordering the boxes on the overview" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/activity-settings.webp"><img src="assets/gallery/thumbs/activity-settings.webp" alt="Activity settings and daily goals" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/analysis-ranges.webp"><img src="assets/gallery/thumbs/analysis-ranges.webp" alt="Analysis: time in ranges" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/analysis-patterns.webp"><img src="assets/gallery/thumbs/analysis-patterns.webp" alt="Analysis: average glucose by time of day" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/analysis-metrics.webp"><img src="assets/gallery/thumbs/analysis-metrics.webp" alt="Analysis: metrics like GMI and variability" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/analysis-history.webp"><img src="assets/gallery/thumbs/analysis-history.webp" alt="Analysis: glucose history" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/analysis-events.webp"><img src="assets/gallery/thumbs/analysis-events.webp" alt="Analysis: alarm and event history" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/analysis-forecast.webp"><img src="assets/gallery/thumbs/analysis-forecast.webp" alt="Analysis: forecast accuracy" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/profile.webp"><img src="assets/gallery/thumbs/profile.webp" alt="Profile and settings" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/settings-glucose.webp"><img src="assets/gallery/thumbs/settings-glucose.webp" alt="Glucose unit, target range and alarms" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/settings-bolus.webp"><img src="assets/gallery/thumbs/settings-bolus.webp" alt="Bolus settings" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/settings-basal.webp"><img src="assets/gallery/thumbs/settings-basal.webp" alt="Basal rate profiles" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/settings-basal-edit.webp"><img src="assets/gallery/thumbs/settings-basal-edit.webp" alt="Editing a basal rate profile" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/settings-notifications.webp"><img src="assets/gallery/thumbs/settings-notifications.webp" alt="Notification settings" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/settings-alarm-tones.webp"><img src="assets/gallery/thumbs/settings-alarm-tones.webp" alt="Alarm tones" width="300" height="667" loading="lazy"></a>
+          <a href="assets/gallery/settings-automation.webp"><img src="assets/gallery/thumbs/settings-automation.webp" alt="Automated delivery limits" width="300" height="667" loading="lazy"></a>
+        </div>
+        <button class="icon-btn gallery-next" type="button" aria-label="Next" data-i18n-attr="aria-label:screens.next"><i class="ph ph-caret-right"></i></button>
+        </div>
+      </div>
+      <dialog class="lightbox" aria-label="Screenshots" data-i18n-attr="aria-label:screens.eyebrow">
+        <div class="lightbox-track"></div>
+        <button class="icon-btn lightbox-close" type="button" aria-label="Close" data-i18n-attr="aria-label:screens.close"><i class="ph ph-x"></i></button>
+        <button class="icon-btn lightbox-prev" type="button" aria-label="Previous" data-i18n-attr="aria-label:screens.prev"><i class="ph ph-caret-left"></i></button>
+        <button class="icon-btn lightbox-next" type="button" aria-label="Next" data-i18n-attr="aria-label:screens.next"><i class="ph ph-caret-right"></i></button>
+      </dialog>
+    </section>
+
     <!-- FAQ -->
     <section id="faq">
       <div class="wrap">
@@ -278,6 +340,7 @@
             <h3 data-i18n="footer.col.product">Product</h3>
             <a href="#features" data-i18n="nav.features">Features</a>
             <a href="#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a>
+            <a href="#screens" data-i18n="nav.screens">Screenshots</a>
             <a href="https://panel.insulink.de" data-i18n="footer.link.panel">Panel</a>
           </div>
           <div class="footer-col">

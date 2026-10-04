@@ -38,6 +38,31 @@
     if (flagEl) flagEl.textContent = lang === "de" ? "🇩🇪" : "🇬🇧";
     if (codeEl) codeEl.textContent = lang === "de" ? "DE" : "EN";
     localStorage.setItem(LANG_KEY, lang);
+    syncDemo();
+  }
+
+  /** The hero demo follows the page: main_demo.dart adopts ?lang= and ?theme=,
+      and ?frame= is the corner radius the app clips itself to (style.css).
+      A change reloads it, which the demo's splash covers. The demo is not part
+      of this site: the app's CI publishes it to the URL in data-src (point that
+      at a local `flutter build web` output to preview a change). It starts
+      only after the page itself has loaded, so the app's engine never competes
+      with the page's own first paint. */
+  function syncDemo() {
+    var frame = document.querySelector(".demo-frame");
+    if (!frame) {
+      return;
+    }
+    if (document.readyState !== "complete") {
+      window.addEventListener("load", syncDemo, { once: true });
+      return;
+    }
+    var root = document.documentElement;
+    var radius = parseInt(getComputedStyle(frame).getPropertyValue("--screen-radius"), 10);
+    var src = frame.getAttribute("data-src") + "?frame=" + radius + "&lang=" + root.lang + "&theme=" + root.getAttribute("data-theme");
+    if (frame.getAttribute("src") !== src) {
+      frame.setAttribute("src", src);
+    }
   }
 
   function applyTheme(theme) {
@@ -45,6 +70,7 @@
     localStorage.setItem(THEME_KEY, theme);
     var btn = document.getElementById("theme-toggle");
     if (btn) btn.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    syncDemo();
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -81,65 +107,54 @@
       });
     }
 
-    // scrollytelling: pinned phone tilts with scroll, active step lights up
-    var scrolly = document.querySelector(".scrolly");
-    if (scrolly) {
-      var phone = scrolly.querySelector(".phone-tilt");
-      var steps = scrolly.querySelectorAll(".scrolly-step");
-      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // header: transparent over the hero at the very top, the regular one once scrolled
+    var header = document.querySelector(".site-header.on-hero");
+    if (header) {
+      var onScrollHeader = function () {
+        header.classList.toggle("on-hero", window.scrollY < 16);
+      };
+      window.addEventListener("scroll", onScrollHeader, { passive: true });
+      onScrollHeader();
+    }
 
-      if (phone && !reduce) {
-        var ticking = false;
-        function updateTilt() {
-          ticking = false;
-          var r = scrolly.getBoundingClientRect();
-          var vh = window.innerHeight;
-          // 0 when section top hits viewport center, 1 when its bottom does
-          var p = (vh / 2 - r.top) / (r.height || 1);
-          p = p < 0 ? 0 : p > 1 ? 1 : p;
-          phone.style.setProperty("--p", p.toFixed(4));
-        }
-        function onScroll() {
-          if (!ticking) { ticking = true; requestAnimationFrame(updateTilt); }
-        }
-        window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", onScroll, { passive: true });
-        updateTilt();
-      }
-
-      var base = scrolly.querySelector(".shot-base");
-      var top = scrolly.querySelector(".shot-top");
-      var currentSrc = base && base.getAttribute("src");
-      // preload the per-step screenshots so the crossfade never waits on the network
-      steps.forEach(function (el) {
-        var src = el.getAttribute("data-shot");
-        if (src) { var im = new Image(); im.src = src; }
-      });
-      // crossfade: fade the next shot in on the top layer, then commit it to the base underneath
-      if (top) {
-        top.addEventListener("transitionend", function () {
-          if (top.style.opacity === "1") { base.src = top.src; top.style.opacity = "0"; }
+    // screenshot strip arrows: page by most of the visible width
+    var gallery = document.querySelector(".gallery");
+    if (gallery) {
+      [["gallery-prev", -1], ["gallery-next", 1]].forEach(function (pair) {
+        document.querySelector("." + pair[0]).addEventListener("click", function () {
+          gallery.scrollBy({ left: pair[1] * gallery.clientWidth * 0.8, behavior: "smooth" });
         });
-      }
-      function showShot(src) {
-        if (!base || !top || !src || src === currentSrc) return;
-        currentSrc = src;
-        var next = new Image();
-        next.onload = function () { top.src = src; top.style.opacity = "1"; };
-        next.src = src;
-      }
+      });
+    }
 
-      if (steps.length && "IntersectionObserver" in window) {
-        var stepIo = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            e.target.classList.toggle("active", e.isIntersecting);
-            if (e.isIntersecting) showShot(e.target.getAttribute("data-shot"));
-          });
-        }, { rootMargin: "-45% 0px -45% 0px" });
-        steps.forEach(function (el) { stepIo.observe(el); });
-      } else {
-        steps.forEach(function (el) { el.classList.add("active"); });
+    // screenshot lightbox: the dialog track holds every full-size screenshot (the
+    // thumbnail's link target), one per snap page, loaded only when paged to
+    var lightbox = document.querySelector(".lightbox");
+    if (lightbox && lightbox.showModal) {
+      var track = lightbox.querySelector(".lightbox-track");
+      var thumbs = document.querySelectorAll(".gallery a");
+      thumbs.forEach(function (link, index) {
+        var full = document.createElement("img");
+        full.src = link.href;
+        full.alt = link.querySelector("img").alt;
+        full.loading = "lazy";
+        track.appendChild(full);
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          lightbox.showModal();
+          track.scrollTo({ left: index * track.clientWidth, behavior: "instant" });
+        });
+      });
+      function page(direction) {
+        track.scrollBy({ left: direction * track.clientWidth, behavior: "smooth" });
       }
+      lightbox.querySelector(".lightbox-prev").addEventListener("click", function () { page(-1); });
+      lightbox.querySelector(".lightbox-next").addEventListener("click", function () { page(1); });
+      lightbox.querySelector(".lightbox-close").addEventListener("click", function () { lightbox.close(); });
+      lightbox.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft") { event.preventDefault(); page(-1); }
+        if (event.key === "ArrowRight") { event.preventDefault(); page(1); }
+      });
     }
 
     // scroll reveal
