@@ -277,7 +277,7 @@ section { padding: 90px 0; }
    (overlay), all in the app's background colour per theme. */
 .demo-phone {
   --demo-height: min(800px, calc(100vh - 72px - 2 * var(--hero-pad)));
-  --frame: #fafafa;
+  --frame: #f2f3f5;
   --screen-radius: 15px;
   --ring: 7px;
   display: flex;
