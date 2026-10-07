@@ -6,7 +6,7 @@
   <meta name="robots" content="index, follow">
   <title>Insulink: open-source glucose ecosystem</title>
   <link rel="canonical" href="https://insulink.de/">
-  <meta name="theme-color" content="#3a4890">
+  <meta name="theme-color" content="#9DAEFF">
   <meta name="description" content="Insulink is an open-source glucose ecosystem: live readings, your own dashboard and a predictor for what's coming, without the official app. Not a medical device.">
   <meta property="og:title" content="Insulink">
   <meta property="og:description" content="An open-source glucose ecosystem: live readings, your dashboard and a predictor, without the vendor lock-in.">
@@ -35,8 +35,7 @@
   <link rel="icon" href="assets/img/icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&display=swap" rel="stylesheet">
   <link rel="preload" href="assets/fonts/phosphor-subset.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
@@ -51,91 +50,80 @@
   </script>
 </head>
 <body>
-  <header class="site-header on-hero">
-    <div class="wrap">
+  <header class="hero" id="top">
+    <div class="wrap wrap-wide hero-nav">
       <a class="brand" href="#top">
-        <img src="assets/img/logo-white.png" alt="Insulink logo">
+        <svg class="icon" width="30" height="30" viewBox="0 0 24 24" stroke-width="2.4" aria-hidden="true"><path d="M7.5 8.5c-2 0-3.5 1.6-3.5 3.5s1.5 3.5 3.5 3.5c3.5 0 5.5-7 9-7 2 0 3.5 1.6 3.5 3.5s-1.5 3.5-3.5 3.5c-3.5 0-5.5-7-9-7z"/></svg>
         Insulink
       </a>
-      <nav class="nav-links" id="nav-links">
+      <nav class="hero-links" aria-label="Main menu" data-i18n-attr="aria-label:nav.label">
         <a href="#idea" data-i18n="nav.idea">Idea</a>
         <a href="#features" data-i18n="nav.features">Features</a>
         <a href="#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a>
         <a href="#how" data-i18n="nav.how">How it works</a>
-        <a href="#screens" data-i18n="nav.screens">Screenshots</a>
+        <a href="#screens" data-i18n="nav.screens">Screens</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
       </nav>
-      <div class="header-actions">
-        <div class="lang-dd" id="lang-dd">
-          <button class="icon-btn lang-current" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false" title="Switch language">
-            <span class="flag" data-flag>🇬🇧</span><span class="lang-code" data-code>EN</span>
-          </button>
-          <ul class="lang-menu" role="listbox" aria-label="Language">
-            <li role="option" data-lang="en"><span class="flag">🇬🇧</span> English</li>
-            <li role="option" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</li>
-          </ul>
-        </div>
-        <button class="icon-btn" id="theme-toggle" aria-label="Switch theme">
-          <i class="ph ph-sun theme-sun"></i><i class="ph ph-moon theme-moon"></i>
+      <div class="hero-actions">
+        <button class="round-btn" id="lang-toggle" type="button" aria-label="EN, switch to German" data-i18n-attr="aria-label:nav.lang_switch" data-code>EN</button>
+        <button class="round-btn square" id="theme-toggle" type="button" aria-label="Switch to light mode">
+          <svg class="icon theme-sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon theme-moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg>
         </button>
-        <a class="btn btn-primary" href="https://panel.insulink.de" aria-label="Login" data-i18n-attr="aria-label:nav.login">
-          <i class="ph ph-sign-in"></i>
+        <a class="btn btn-small btn-ink" href="https://panel.insulink.de" aria-label="Login" data-i18n-attr="aria-label:nav.login">
+          <svg class="icon" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h5v16h-5M10 8l4 4-4 4M14 12H4"/></svg>
           <span class="login-label" data-i18n="nav.login">Login</span>
         </a>
-        <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Menu">
-          <i class="ph ph-list"></i>
-        </button>
+      </div>
+    </div>
+    <div class="wrap wrap-wide hero-body">
+      <div class="hero-copy">
+        <h1 data-i18n-html="hero.title"><span class="line">Your devices.</span> <span class="line">Your data.</span> <span class="line">Your rules.</span></h1>
+        <p class="lead" data-i18n="hero.lead"></p>
+        <div class="button-row">
+          <a class="btn btn-ink" href="https://panel.insulink.de" data-i18n="hero.cta_primary">Open the panel</a>
+          <a class="btn btn-ink-soft" href="https://github.com/insulink-app">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.5 5.5 2.8 5.5 2.8a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 4 9.2c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V21"/></svg>
+            GitHub
+          </a>
+        </div>
+        <p class="risk-note">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.8" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/></svg>
+          <span data-i18n="hero.risk"></span>
+        </p>
+      </div>
+      <div class="hero-phone">
+        <svg class="hero-rings" viewBox="0 0 800 800" aria-hidden="true"><circle cx="400" cy="400" r="200"/><circle cx="400" cy="400" r="290"/><circle cx="400" cy="400" r="380"/></svg>
+        <div class="phone">
+          <div class="phone-screen">
+            <iframe class="demo-frame" title="Insulink app demo with sample data" data-i18n-attr="title:hero.demo_title" data-src="https://insulink-app.github.io/insulink-app/"></iframe>
+          </div>
+          <span class="phone-notch" aria-hidden="true"></span>
+        </div>
       </div>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="hero-slogan" data-i18n="hero.slogan">Make diabetes easy.</p>
-          <h1 data-i18n-html="hero.title"><span class="line">Your devices.</span> <span class="line accent">Your data.</span> <span class="line">Your rules.</span></h1>
-          <p class="lead" data-i18n="hero.lead">Insulink is a fully open-source glucose ecosystem. Read your CGM over Bluetooth, watch it live, and let the predictor show you where you're heading. App, panel, API and forecasting, all open.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://panel.insulink.de" data-i18n="hero.cta_primary">Open the panel</a>
-            <a class="btn" href="#idea" data-i18n="hero.cta_secondary">Explore the idea</a>
-          </div>
-          <p class="risk-note">
-            <i class="ph ph-shield-warning"></i>
-            <span data-i18n="hero.risk">Use Insulink at your own risk. It's a companion for curious people, never a replacement for your approved devices or your care team.</span>
-          </p>
-        </div>
-        <div class="hero-demo">
-          <div class="demo-phone">
-            <div class="demo-screen">
-              <iframe class="demo-frame" title="Insulink app demo with sample data" data-src="https://insulink-app.github.io/insulink-app/"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+  <main>
     <!-- IDEA -->
-    <section id="idea">
+    <section id="idea" class="idea">
       <div class="wrap">
-        <span class="eyebrow reveal" data-i18n="idea.eyebrow">The idea</span>
-        <h2 class="section-title reveal" data-i18n="idea.title">Own your glucose data</h2>
-        <p class="section-lead reveal" data-i18n="idea.lead">Continuous glucose monitors lock your readings inside one vendor app.</p>
-        <div class="grid grid-3">
-          <div class="card reveal">
-            <div class="card-icon"><i class="ph ph-broadcast"></i></div>
-            <h3 data-i18n="idea.p1.title">Direct from the sensor</h3>
+        <h2 class="statement reveal" data-i18n-html="idea.statement"></h2>
+        <p class="statement-lead reveal" data-i18n="idea.lead"></p>
+        <div class="idea-points reveal">
+          <div class="idea-point">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8"/></svg>
+            <h3 data-i18n="idea.p1.title"></h3>
             <p data-i18n="idea.p1.text"></p>
           </div>
-          <div class="card reveal">
-            <div class="card-icon"><i class="ph ph-code"></i></div>
-            <h3 data-i18n="idea.p2.title">Open by default</h3>
+          <div class="idea-point">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.9" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+            <h3 data-i18n="idea.p2.title"></h3>
             <p data-i18n="idea.p2.text"></p>
           </div>
-          <div class="card reveal">
-            <div class="card-icon"><i class="ph ph-chart-line-up"></i></div>
-            <h3 data-i18n="idea.p3.title">Patterns, not prescriptions</h3>
+          <div class="idea-point">
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.9" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>
+            <h3 data-i18n="idea.p3.title"></h3>
             <p data-i18n="idea.p3.text"></p>
           </div>
         </div>
@@ -143,185 +131,479 @@
     </section>
 
     <!-- FEATURES -->
-    <section id="features">
+    <section id="features" class="features">
       <div class="wrap">
-        <span class="eyebrow reveal" data-i18n="features.eyebrow">Features</span>
-        <h2 class="section-title reveal" data-i18n="features.title">Everything around your reading</h2>
-        <p class="section-lead reveal" data-i18n="features.lead">From the live number on your phone to long-term patterns in your browser.</p>
-        <div class="grid grid-2">
-          <div class="card featured reveal">
-            <div class="card-icon"><i class="ph ph-lightbulb"></i></div>
-            <h3 data-i18n="feat.insights.title">The Predictor</h3>
-            <p data-i18n="feat.insights.text"></p>
-            <span class="tag">Predictor</span>
+        <div class="section-head reveal">
+          <div>
+            <span class="label" data-i18n="features.label"></span>
+            <h2 data-i18n="features.title"></h2>
           </div>
-          <div class="card reveal">
-            <div class="card-icon"><i class="ph ph-pulse"></i></div>
-            <h3 data-i18n="feat.live.title">Live glucose &amp; alarms</h3>
+          <p data-i18n="features.lead"></p>
+        </div>
+        <div class="bento">
+          <article class="tile wide reveal">
+            <h3 data-i18n="feat.predictor.title"></h3>
+            <p data-i18n="feat.predictor.text"></p>
+            <div class="tile-visual">
+              <svg class="forecast-chart" viewBox="0 0 640 216" width="100%" aria-hidden="true">
+                <defs>
+                  <clipPath id="forecast-high"><rect x="0" y="0" width="640" height="55.9"/></clipPath>
+                  <clipPath id="forecast-in"><rect x="0" y="55.9" width="640" height="190"/></clipPath>
+                </defs>
+                <rect class="chart-target" x="0" y="55.9" width="640" height="122.9" rx="6"/>
+                <line class="chart-limit-high" x1="0" x2="640" y1="55.9" y2="55.9"/>
+                <line class="chart-limit-low" x1="0" x2="640" y1="178.8" y2="178.8"/>
+                <text class="chart-axis" x="4" y="49.9">180</text>
+                <text class="chart-axis" x="4" y="193.8">70</text>
+                <rect class="forecast-zone" x="533.3" y="0" width="106.7" height="190"/>
+                <line class="forecast-now" x1="533.3" x2="533.3" y1="0" y2="190"/>
+                <path class="line-in-range" clip-path="url(#forecast-in)" d="M0.0 145.1 C1.2 145.0 4.7 144.9 7.1 144.5 C9.5 144.0 11.9 142.8 14.2 142.4 C16.6 142.0 19.0 142.6 21.3 142.1 C23.7 141.6 26.1 140.2 28.4 139.5 C30.8 138.7 33.2 138.3 35.6 137.5 C37.9 136.8 40.3 136.3 42.7 135.2 C45.0 134.0 47.4 132.0 49.8 130.6 C52.1 129.2 54.5 128.4 56.9 126.6 C59.3 124.8 61.6 122.0 64.0 119.8 C66.4 117.5 68.7 115.5 71.1 112.9 C73.5 110.3 75.9 107.3 78.2 104.1 C80.6 100.8 83.0 97.1 85.3 93.5 C87.7 89.8 90.1 85.5 92.4 82.0 C94.8 78.5 97.2 75.8 99.6 72.5 C101.9 69.2 104.3 65.4 106.7 62.1 C109.0 58.9 111.4 55.5 113.8 52.8 C116.1 50.1 118.5 47.5 120.9 45.9 C123.3 44.3 125.6 43.7 128.0 43.3 C130.4 42.8 132.7 43.3 135.1 43.4 C137.5 43.6 139.9 43.2 142.2 44.1 C144.6 45.1 147.0 47.7 149.3 49.0 C151.7 50.3 154.1 50.4 156.4 52.1 C158.8 53.7 161.2 56.5 163.6 58.7 C165.9 61.0 168.3 63.2 170.7 65.6 C173.0 67.9 175.4 70.4 177.8 72.9 C180.1 75.3 182.5 77.8 184.9 80.2 C187.3 82.6 189.6 84.5 192.0 87.1 C194.4 89.8 196.7 93.4 199.1 96.0 C201.5 98.6 203.9 100.5 206.2 102.8 C208.6 105.1 211.0 107.4 213.3 109.7 C215.7 112.0 218.1 114.6 220.4 116.7 C222.8 118.7 225.2 120.3 227.6 122.2 C229.9 124.1 232.3 126.4 234.7 128.1 C237.0 129.9 239.4 131.2 241.8 132.5 C244.1 133.8 246.5 135.0 248.9 135.9 C251.3 136.8 253.6 137.2 256.0 138.0 C258.4 138.8 260.7 140.0 263.1 140.8 C265.5 141.6 267.9 142.3 270.2 142.8 C272.6 143.3 275.0 143.3 277.3 143.6 C279.7 143.9 282.1 144.3 284.4 144.6 C286.8 144.9 289.2 145.4 291.6 145.3 C293.9 145.3 296.3 144.7 298.7 144.6 C301.0 144.5 303.4 144.5 305.8 144.6 C308.1 144.7 310.5 145.2 312.9 145.0 C315.3 144.9 317.6 144.2 320.0 143.9 C322.4 143.6 324.7 143.6 327.1 143.3 C329.5 143.0 331.9 142.2 334.2 141.9 C336.6 141.6 339.0 141.4 341.3 141.3 C343.7 141.2 346.1 141.6 348.4 141.2 C350.8 140.8 353.2 139.3 355.6 139.0 C357.9 138.8 360.3 139.8 362.7 139.7 C365.0 139.5 367.4 138.7 369.8 138.2 C372.1 137.8 374.5 137.0 376.9 136.8 C379.3 136.6 381.6 137.3 384.0 137.1 C386.4 137.0 388.7 136.0 391.1 135.8 C393.5 135.7 395.9 136.3 398.2 136.1 C400.6 135.8 403.0 134.8 405.3 134.5 C407.7 134.1 410.1 134.0 412.4 134.0 C414.8 133.9 417.2 134.2 419.6 134.1 C421.9 134.0 424.3 133.4 426.7 133.4 C429.0 133.5 431.4 134.4 433.8 134.5 C436.1 134.6 438.5 134.0 440.9 134.0 C443.3 134.0 445.6 134.3 448.0 134.5 C450.4 134.6 452.7 134.7 455.1 134.9 C457.5 135.1 459.9 135.5 462.2 135.6 C464.6 135.7 467.0 135.4 469.3 135.5 C471.7 135.5 474.1 135.5 476.4 135.8 C478.8 136.1 481.2 136.9 483.6 137.0 C485.9 137.2 488.3 136.7 490.7 136.8 C493.0 136.9 495.4 137.8 497.8 137.5 C500.1 137.2 502.5 136.0 504.9 135.2 C507.3 134.5 509.6 134.2 512.0 133.1 C514.4 132.0 516.7 130.4 519.1 128.8 C521.5 127.2 523.9 125.6 526.2 123.7 C528.6 121.8 532.1 118.5 533.3 117.4"/>
+                <path class="line-high" clip-path="url(#forecast-high)" d="M0.0 145.1 C1.2 145.0 4.7 144.9 7.1 144.5 C9.5 144.0 11.9 142.8 14.2 142.4 C16.6 142.0 19.0 142.6 21.3 142.1 C23.7 141.6 26.1 140.2 28.4 139.5 C30.8 138.7 33.2 138.3 35.6 137.5 C37.9 136.8 40.3 136.3 42.7 135.2 C45.0 134.0 47.4 132.0 49.8 130.6 C52.1 129.2 54.5 128.4 56.9 126.6 C59.3 124.8 61.6 122.0 64.0 119.8 C66.4 117.5 68.7 115.5 71.1 112.9 C73.5 110.3 75.9 107.3 78.2 104.1 C80.6 100.8 83.0 97.1 85.3 93.5 C87.7 89.8 90.1 85.5 92.4 82.0 C94.8 78.5 97.2 75.8 99.6 72.5 C101.9 69.2 104.3 65.4 106.7 62.1 C109.0 58.9 111.4 55.5 113.8 52.8 C116.1 50.1 118.5 47.5 120.9 45.9 C123.3 44.3 125.6 43.7 128.0 43.3 C130.4 42.8 132.7 43.3 135.1 43.4 C137.5 43.6 139.9 43.2 142.2 44.1 C144.6 45.1 147.0 47.7 149.3 49.0 C151.7 50.3 154.1 50.4 156.4 52.1 C158.8 53.7 161.2 56.5 163.6 58.7 C165.9 61.0 168.3 63.2 170.7 65.6 C173.0 67.9 175.4 70.4 177.8 72.9 C180.1 75.3 182.5 77.8 184.9 80.2 C187.3 82.6 189.6 84.5 192.0 87.1 C194.4 89.8 196.7 93.4 199.1 96.0 C201.5 98.6 203.9 100.5 206.2 102.8 C208.6 105.1 211.0 107.4 213.3 109.7 C215.7 112.0 218.1 114.6 220.4 116.7 C222.8 118.7 225.2 120.3 227.6 122.2 C229.9 124.1 232.3 126.4 234.7 128.1 C237.0 129.9 239.4 131.2 241.8 132.5 C244.1 133.8 246.5 135.0 248.9 135.9 C251.3 136.8 253.6 137.2 256.0 138.0 C258.4 138.8 260.7 140.0 263.1 140.8 C265.5 141.6 267.9 142.3 270.2 142.8 C272.6 143.3 275.0 143.3 277.3 143.6 C279.7 143.9 282.1 144.3 284.4 144.6 C286.8 144.9 289.2 145.4 291.6 145.3 C293.9 145.3 296.3 144.7 298.7 144.6 C301.0 144.5 303.4 144.5 305.8 144.6 C308.1 144.7 310.5 145.2 312.9 145.0 C315.3 144.9 317.6 144.2 320.0 143.9 C322.4 143.6 324.7 143.6 327.1 143.3 C329.5 143.0 331.9 142.2 334.2 141.9 C336.6 141.6 339.0 141.4 341.3 141.3 C343.7 141.2 346.1 141.6 348.4 141.2 C350.8 140.8 353.2 139.3 355.6 139.0 C357.9 138.8 360.3 139.8 362.7 139.7 C365.0 139.5 367.4 138.7 369.8 138.2 C372.1 137.8 374.5 137.0 376.9 136.8 C379.3 136.6 381.6 137.3 384.0 137.1 C386.4 137.0 388.7 136.0 391.1 135.8 C393.5 135.7 395.9 136.3 398.2 136.1 C400.6 135.8 403.0 134.8 405.3 134.5 C407.7 134.1 410.1 134.0 412.4 134.0 C414.8 133.9 417.2 134.2 419.6 134.1 C421.9 134.0 424.3 133.4 426.7 133.4 C429.0 133.5 431.4 134.4 433.8 134.5 C436.1 134.6 438.5 134.0 440.9 134.0 C443.3 134.0 445.6 134.3 448.0 134.5 C450.4 134.6 452.7 134.7 455.1 134.9 C457.5 135.1 459.9 135.5 462.2 135.6 C464.6 135.7 467.0 135.4 469.3 135.5 C471.7 135.5 474.1 135.5 476.4 135.8 C478.8 136.1 481.2 136.9 483.6 137.0 C485.9 137.2 488.3 136.7 490.7 136.8 C493.0 136.9 495.4 137.8 497.8 137.5 C500.1 137.2 502.5 136.0 504.9 135.2 C507.3 134.5 509.6 134.2 512.0 133.1 C514.4 132.0 516.7 130.4 519.1 128.8 C521.5 127.2 523.9 125.6 526.2 123.7 C528.6 121.8 532.1 118.5 533.3 117.4"/>
+                <path class="forecast-band" d="M533.3 113.7 L540.4 102.5 L547.6 90.1 L554.7 77.0 L561.8 64.3 L568.9 53.2 L576.0 44.8 L583.1 40.0 L590.2 38.3 L597.3 38.2 L604.4 39.5 L611.6 42.1 L618.7 45.6 L618.7 103.3 L611.6 95.5 L604.4 88.7 L597.3 83.1 L590.2 79.0 L583.1 76.4 L576.0 77.0 L568.9 81.1 L561.8 88.0 L554.7 96.4 L547.6 105.3 L540.4 113.5 L533.3 120.4 Z"/>
+                <path class="forecast-line" d="M533.3 117.0 C534.5 115.5 538.1 111.3 540.4 108.0 C542.8 104.8 545.2 101.2 547.6 97.7 C549.9 94.1 552.3 90.3 554.7 86.7 C557.0 83.1 559.4 79.4 561.8 76.1 C564.1 72.9 566.5 69.7 568.9 67.2 C571.3 64.6 573.6 62.4 576.0 60.9 C578.4 59.4 580.7 58.6 583.1 58.2 C585.5 57.8 587.9 58.2 590.2 58.6 C592.6 59.0 595.0 59.8 597.3 60.7 C599.7 61.6 602.1 62.8 604.4 64.1 C606.8 65.5 609.2 67.1 611.6 68.8 C613.9 70.5 617.5 73.5 618.7 74.5"/>
+                <circle class="now-dot" cx="533.3" cy="117.4" r="5.5"/>
+                <circle class="forecast-peak" cx="583.1" cy="58.2" r="4.5"/>
+                <text class="forecast-peak-label" x="583.1" y="44.2" data-i18n="feat.predictor.peak">~180 um 13:45</text>
+                <text class="chart-axis" x="85.3" y="210" text-anchor="middle" data-i18n="feat.predictor.t8">8 Uhr</text>
+                <text class="chart-axis" x="256" y="210" text-anchor="middle" data-i18n="feat.predictor.t10">10 Uhr</text>
+                <text class="chart-axis" x="426.7" y="210" text-anchor="middle" data-i18n="feat.predictor.t12">12 Uhr</text>
+                <text class="chart-axis now" x="533.3" y="210" text-anchor="middle" data-i18n="feat.predictor.now">jetzt</text>
+                <text class="chart-axis" x="640" y="210" text-anchor="end">+1 h</text>
+              </svg>
+              <div class="legend">
+                <span><i class="key-line"></i><span data-i18n="feat.predictor.legend_readings"></span></span>
+                <span><i class="key-band"></i><span data-i18n="feat.predictor.legend_forecast"></span></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tile reveal">
+            <h3 data-i18n="feat.live.title"></h3>
             <p data-i18n="feat.live.text"></p>
-          </div>
-          <div class="card reveal">
-            <div class="card-icon"><i class="ph ph-squares-four"></i></div>
-            <h3 data-i18n="feat.panel.title">Your dashboard</h3>
+            <div class="live-value">
+              <div class="live-number">
+                <b>92</b>
+                <svg class="icon" width="38" height="38" viewBox="0 0 24 24" stroke-width="2.8" aria-hidden="true"><path d="M7 7l10 10M17 9v8H9"/></svg>
+              </div>
+              <span class="live-unit">mg/dL<br><b data-i18n="feat.live.falling"></b></span>
+            </div>
+            <svg class="sparkline" viewBox="0 0 300 54" width="100%" height="54" aria-hidden="true">
+              <defs><linearGradient id="sparkline-fade" x1="0" x2="1"><stop offset="0" class="fade-start"/><stop offset="1" class="fade-end"/></linearGradient></defs>
+              <path d="M0.0 15.6 C1.4 15.3 5.7 13.8 8.6 13.5 C11.4 13.2 14.3 14.3 17.1 14.0 C20.0 13.7 22.9 12.1 25.7 11.7 C28.6 11.3 31.4 11.7 34.3 11.7 C37.1 11.6 40.0 11.3 42.9 11.2 C45.7 11.1 48.6 11.4 51.4 11.1 C54.3 10.8 57.1 9.2 60.0 9.3 C62.9 9.3 65.7 11.0 68.6 11.4 C71.4 11.8 74.3 11.6 77.1 11.8 C80.0 11.9 82.9 12.3 85.7 12.4 C88.6 12.4 91.4 11.7 94.3 12.2 C97.1 12.8 100.0 15.0 102.9 15.7 C105.7 16.3 108.6 15.8 111.4 16.0 C114.3 16.3 117.1 16.8 120.0 17.1 C122.9 17.3 125.7 17.1 128.6 17.4 C131.4 17.6 134.3 18.2 137.1 18.5 C140.0 18.8 142.9 18.7 145.7 19.2 C148.6 19.6 151.4 20.8 154.3 21.2 C157.1 21.5 160.0 21.2 162.9 21.3 C165.7 21.4 168.6 21.9 171.4 21.9 C174.3 21.8 177.1 21.0 180.0 20.8 C182.9 20.6 185.7 20.4 188.6 20.8 C191.4 21.2 194.3 22.7 197.1 23.1 C200.0 23.5 202.9 23.2 205.7 23.2 C208.6 23.2 211.4 23.1 214.3 23.2 C217.1 23.2 220.0 23.4 222.9 23.4 C225.7 23.5 228.6 23.2 231.4 23.2 C234.3 23.3 237.1 23.3 240.0 23.6 C242.9 24.0 245.7 24.9 248.6 25.6 C251.4 26.2 254.3 27.2 257.1 27.7 C260.0 28.1 262.9 27.9 265.7 28.4 C268.6 28.9 271.4 30.0 274.3 30.8 C277.1 31.5 280.0 32.2 282.9 32.9 C285.7 33.6 288.6 33.9 291.4 34.9 C294.3 35.9 298.6 38.3 300.0 39.0"/>
+              <circle class="now-dot" cx="300" cy="39" r="5"/>
+            </svg>
+            <div class="tile-visual push">
+              <div class="push-behind" aria-hidden="true"></div>
+              <div class="push-card">
+                <span class="push-icon"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" stroke-width="2.6" aria-hidden="true"><path d="M7.5 8.5c-2 0-3.5 1.6-3.5 3.5s1.5 3.5 3.5 3.5c3.5 0 5.5-7 9-7 2 0 3.5 1.6 3.5 3.5s-1.5 3.5-3.5 3.5c-3.5 0-5.5-7-9-7z"/></svg></span>
+                <span class="push-text">
+                  <span class="push-meta"><span>Insulink</span><span data-i18n="feat.predictor.now"></span></span>
+                  <b data-i18n="feat.live.push_title"></b>
+                  <span data-i18n="feat.live.push_text"></span>
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tile reveal">
+            <h3 data-i18n="feat.pump.title"></h3>
+            <p data-i18n="feat.pump.text"></p>
+            <div class="tile-visual">
+              <div class="pump-card">
+                <div class="pump-head">
+                  <span class="pump-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.9" aria-hidden="true"><path d="m18 2 4 4M16 4l4 4M19 5l-9.5 9.5M14 6l4 4-8.5 8.5H5.5v-4zM5.5 18.5 2 22"/></svg></span>
+                  <div>
+                    <b>Omnipod DASH</b>
+                    <span class="pump-state"><i></i><span data-i18n="feat.pump.state"></span></span>
+                  </div>
+                </div>
+                <div class="pump-row">
+                  <div class="pump-label"><span data-i18n="feat.pump.lifetime"></span><b data-i18n="feat.pump.lifetime_value"></b></div>
+                  <div class="segments" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></div>
+                </div>
+                <div class="pump-row">
+                  <div class="pump-label"><span data-i18n="feat.pump.reservoir"></span><b data-i18n="feat.pump.reservoir_value"></b></div>
+                  <div class="fill-bar" aria-hidden="true"><i style="width: 74%"></i></div>
+                </div>
+                <div class="pump-auto">
+                  <span data-i18n="feat.pump.auto"></span>
+                  <span class="mini-switch" aria-hidden="true"><span data-i18n="feat.pump.off"></span><span class="on" data-i18n="feat.pump.on"></span></span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="tile wide reveal">
+            <h3 data-i18n="feat.panel.title"></h3>
             <p data-i18n="feat.panel.text"></p>
-            <span class="tag">panel.insulink.de</span>
-          </div>
-          <div class="card reveal">
-            <div class="card-icon"><i class="ph ph-database"></i></div>
-            <h3 data-i18n="feat.api.title">Open, self-hostable API</h3>
-            <p data-i18n="feat.api.text"></p>
-          </div>
+            <div class="tile-visual">
+              <div class="sketch" aria-hidden="true">
+                <div class="sketch-bar"><i></i><i></i><i></i><span>panel.insulink.de</span></div>
+                <div class="sketch-body">
+                  <div class="sketch-side">
+                    <div class="sketch-brand"><span><svg class="icon" width="11" height="11" viewBox="0 0 24 24" stroke-width="2.6"><path d="M7.5 8.5c-2 0-3.5 1.6-3.5 3.5s1.5 3.5 3.5 3.5c3.5 0 5.5-7 9-7 2 0 3.5 1.6 3.5 3.5s-1.5 3.5-3.5 3.5c-3.5 0-5.5-7-9-7z"/></svg></span><b>Insulink</b></div>
+                    <span class="sketch-menu active"><i></i><i style="width: 60%"></i></span><span class="sketch-menu"><i></i><i style="width: 48%"></i></span><span class="sketch-menu"><i></i><i style="width: 40%"></i></span><span class="sketch-menu"><i></i><i style="width: 56%"></i></span><span class="sketch-menu"><i></i><i style="width: 44%"></i></span><span class="sketch-menu"><i></i><i style="width: 52%"></i></span><span class="sketch-menu"><i></i><i style="width: 36%"></i></span>
+                  </div>
+                  <div class="sketch-grid">
+                    <div class="sketch-card">
+                      <span class="sketch-title">CURRENT GLUCOSE</span>
+                      <div class="sketch-value"><b>137</b><svg class="icon" width="18" height="18" viewBox="0 0 24 24" stroke-width="2.6"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+                      <svg class="sketch-curve" viewBox="0 0 300 90" width="100%" height="90" preserveAspectRatio="none"><rect x="0" y="12.9" width="300" height="70.7"/><path d="M0.0 51.4 C1.2 49.4 5.0 42.9 7.5 39.3 C10.0 35.7 12.5 32.3 15.0 29.9 C17.5 27.6 20.0 25.9 22.5 25.2 C25.0 24.6 27.5 24.9 30.0 25.9 C32.5 26.9 35.0 29.0 37.5 31.1 C40.0 33.3 42.5 36.3 45.0 39.0 C47.5 41.6 50.0 44.7 52.5 47.1 C55.0 49.5 57.5 51.8 60.0 53.4 C62.5 55.0 65.0 56.2 67.5 56.8 C70.0 57.5 72.5 57.5 75.0 57.5 C77.5 57.4 80.0 56.8 82.5 56.4 C85.0 56.0 87.5 55.4 90.0 55.3 C92.5 55.2 95.0 55.2 97.5 55.7 C100.0 56.2 102.5 57.2 105.0 58.3 C107.5 59.5 110.0 61.2 112.5 62.7 C115.0 64.3 117.5 66.2 120.0 67.5 C122.5 68.8 125.0 70.2 127.5 70.6 C130.0 71.1 132.5 71.2 135.0 70.3 C137.5 69.5 140.0 67.8 142.5 65.6 C145.0 63.3 147.5 60.1 150.0 56.7 C152.5 53.4 155.0 49.2 157.5 45.4 C160.0 41.6 162.5 37.4 165.0 34.1 C167.5 30.8 170.0 27.6 172.5 25.6 C175.0 23.6 177.5 22.2 180.0 22.0 C182.5 21.7 185.0 22.5 187.5 24.1 C190.0 25.6 192.5 28.3 195.0 31.3 C197.5 34.2 200.0 38.1 202.5 41.6 C205.0 45.2 207.5 49.2 210.0 52.5 C212.5 55.8 215.0 59.1 217.5 61.5 C220.0 63.8 222.5 65.7 225.0 66.7 C227.5 67.8 230.0 68.0 232.5 67.9 C235.0 67.7 237.5 66.8 240.0 65.8 C242.5 64.9 245.0 63.3 247.5 62.2 C250.0 61.0 252.5 59.7 255.0 58.9 C257.5 58.0 260.0 57.4 262.5 57.2 C265.0 57.0 267.5 57.3 270.0 57.7 C272.5 58.1 275.0 58.9 277.5 59.4 C280.0 60.0 282.5 60.8 285.0 61.0 C287.5 61.2 290.0 61.2 292.5 60.6 C295.0 59.9 298.8 57.6 300.0 57.0" vector-effect="non-scaling-stroke"/></svg>
+                    </div>
+                    <div class="sketch-card">
+                      <span class="sketch-title">TIME IN RANGE</span>
+                      <b class="sketch-tir">89 %</b>
+                      <div class="sketch-tir-row">
+                        <div class="sketch-tir-bar"><i class="high" style="flex: 5"></i><i class="in" style="flex: 89"></i><i class="low" style="flex: 6"></i></div>
+                        <div class="sketch-lines"><i class="sketch-line" style="width: 80%"></i><i class="sketch-line" style="width: 64%"></i><i class="sketch-line" style="width: 90%"></i><i class="sketch-line" style="width: 56%"></i><i class="sketch-line" style="width: 70%"></i></div>
+                      </div>
+                    </div>
+                    <div class="sketch-card">
+                      <i class="sketch-line heading" style="width: 40%"></i>
+                      <div class="sketch-stats"><span><i class="sketch-line thin" style="width: 70%"></i><i class="sketch-line value" style="width: 60%"></i></span><span><i class="sketch-line thin" style="width: 70%"></i><i class="sketch-line value" style="width: 70%"></i></span><span><i class="sketch-line thin" style="width: 70%"></i><i class="sketch-line value" style="width: 30%"></i></span></div>
+                    </div>
+                    <div class="sketch-card">
+                      <i class="sketch-line heading" style="width: 50%"></i>
+                      <div class="sketch-stats"><span><i class="sketch-line thin" style="width: 70%"></i><i class="sketch-line value" style="width: 30%"></i></span><span><i class="sketch-line thin" style="width: 70%"></i><i class="sketch-line value" style="width: 64%"></i></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- ECOSYSTEM -->
-    <section id="ecosystem">
+    <section id="ecosystem" class="eco">
       <div class="wrap">
-        <span class="eyebrow reveal" data-i18n="eco.eyebrow">Ecosystem</span>
-        <h2 class="section-title reveal" data-i18n="eco.title">Four parts, one project</h2>
-        <p class="section-lead reveal" data-i18n="eco.lead">Insulink is built as small, independent pieces that work together.</p>
-        <div class="eco">
-          <div class="eco-item card reveal">
-            <div class="num">01</div>
+        <div class="eco-head reveal">
+          <div>
+            <span class="label" data-i18n="eco.label"></span>
+            <h2 data-i18n="eco.title"></h2>
+          </div>
+          <p data-i18n="eco.lead"></p>
+        </div>
+        <div class="flow">
+          <div class="node node-source">
+            <div class="node-top"><span class="node-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8"/></svg></span><span class="node-stack">Flutter &amp; Rust</span></div>
             <h3>App</h3>
             <p data-i18n="eco.app.text"></p>
           </div>
-          <div class="eco-item card reveal">
-            <div class="num">02</div>
-            <h3>Panel</h3>
-            <p data-i18n="eco.panel.text"></p>
-          </div>
-          <div class="eco-item card reveal">
-            <div class="num">03</div>
+          <span class="conn" aria-hidden="true"><i class="packet"></i></span>
+          <div class="node">
+            <div class="node-top"><span class="node-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span><span class="node-stack">Spring Boot</span></div>
             <h3>API</h3>
             <p data-i18n="eco.api.text"></p>
           </div>
-          <div class="eco-item card reveal">
-            <div class="num">04</div>
+          <span class="conn" aria-hidden="true"><i class="packet"></i></span>
+          <div class="node">
+            <div class="node-top"><span class="node-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg></span><span class="node-stack">React</span></div>
+            <h3>Panel</h3>
+            <p data-i18n="eco.panel.text"></p>
+          </div>
+          <span class="conn" aria-hidden="true"><i class="packet"></i></span>
+          <div class="node">
+            <div class="node-top"><span class="node-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></span><span class="node-stack">Python</span></div>
             <h3>Predictor</h3>
             <p data-i18n="eco.predictor.text"></p>
           </div>
         </div>
+        <p class="flow-caption"><i aria-hidden="true"></i><span data-i18n="eco.caption"></span></p>
       </div>
     </section>
 
     <!-- HOW -->
-    <section id="how">
+    <section id="how" class="how">
       <div class="wrap">
-        <span class="eyebrow reveal" data-i18n="how.eyebrow">How it works</span>
-        <h2 class="section-title reveal" data-i18n="how.title">From sensor to insight in three steps</h2>
-        <div class="steps">
-          <div class="step reveal">
-            <div class="step-num"></div>
-            <div><h3 data-i18n="how.1.title">Pair your sensor</h3><p data-i18n="how.1.text"></p></div>
-          </div>
-          <div class="step reveal">
-            <div class="step-num"></div>
-            <div><h3 data-i18n="how.2.title">See it live</h3><p data-i18n="how.2.text"></p></div>
-          </div>
-          <div class="step reveal">
-            <div class="step-num"></div>
-            <div><h3 data-i18n="how.3.title">Explore the patterns</h3><p data-i18n="how.3.text"></p></div>
-          </div>
+        <div class="section-head reveal">
+          <h2 data-i18n="how.title"></h2>
+          <a class="head-link" href="https://github.com/insulink-app/insulink-app#readme">
+            <span data-i18n="how.guide"></span>
+            <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          </a>
         </div>
+        <ol class="steps reveal">
+          <li class="step">
+            <span class="step-number" aria-hidden="true">01</span>
+            <h3 data-i18n="how.1.title"></h3>
+            <p data-i18n="how.1.text"></p>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">02</span>
+            <h3 data-i18n="how.2.title"></h3>
+            <p data-i18n="how.2.text"></p>
+          </li>
+          <li class="step">
+            <span class="step-number" aria-hidden="true">03</span>
+            <h3 data-i18n="how.3.title"></h3>
+            <p data-i18n="how.3.text"></p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- SCREENSHOTS -->
-    <section id="screens">
+    <!-- SCREENS -->
+    <section id="screens" class="screens">
       <div class="wrap">
-        <span class="eyebrow reveal" data-i18n="screens.eyebrow">Screenshots</span>
-        <h2 class="section-title reveal" data-i18n="screens.title">Every screen of the app</h2>
-        <p class="section-lead reveal" data-i18n="screens.lead">Captured on a phone, nothing mocked up. Pick one to flip through them full size.</p>
-        <div class="gallery-panel reveal">
-        <button class="icon-btn gallery-prev" type="button" aria-label="Previous" data-i18n-attr="aria-label:screens.prev"><i class="ph ph-caret-left"></i></button>
-        <div class="gallery">
-          <a href="assets/gallery/overview.webp"><img src="assets/gallery/thumbs/overview.webp" alt="Overview with the current reading, the last 24 hours and time in range" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/overview-bolus.webp"><img src="assets/gallery/thumbs/overview-bolus.webp" alt="Overview while a bolus is being delivered" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/glucose-chart.webp"><img src="assets/gallery/thumbs/glucose-chart.webp" alt="Glucose chart with meals, basal and bolus" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/sensor.webp"><img src="assets/gallery/thumbs/sensor.webp" alt="Connected Dexcom G7 with durability and sensor data" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/sensor-history.webp"><img src="assets/gallery/thumbs/sensor-history.webp" alt="History of all worn sensors" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/pump-empty.webp"><img src="assets/gallery/thumbs/pump-empty.webp" alt="Pump page with no pod paired" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/pod-priming.webp"><img src="assets/gallery/thumbs/pod-priming.webp" alt="Activating a pod: priming" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/pod-attach.webp"><img src="assets/gallery/thumbs/pod-attach.webp" alt="Activating a pod: attaching it to the body" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/pod-connecting.webp"><img src="assets/gallery/thumbs/pod-connecting.webp" alt="Activating a pod: connecting" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/pod-cannula.webp"><img src="assets/gallery/thumbs/pod-cannula.webp" alt="Activating a pod: inserting the cannula" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/pod-running.webp"><img src="assets/gallery/thumbs/pod-running.webp" alt="Activating a pod: pod is running" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/pump.webp"><img src="assets/gallery/thumbs/pump.webp" alt="Pump page with a running Omnipod DASH" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/bolus-calculator.webp"><img src="assets/gallery/thumbs/bolus-calculator.webp" alt="Bolus calculator with carbs and current glucose" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/bolus-confirm.webp"><img src="assets/gallery/thumbs/bolus-confirm.webp" alt="Confirming a bolus before it is sent to the pump" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/insulin-delivered.webp"><img src="assets/gallery/thumbs/insulin-delivered.webp" alt="Insulin delivered per hour" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/pump-history.webp"><img src="assets/gallery/thumbs/pump-history.webp" alt="History of all worn pods" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/inventory.webp"><img src="assets/gallery/thumbs/inventory.webp" alt="Inventory of sensors and pods" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/inventory-edit.webp"><img src="assets/gallery/thumbs/inventory-edit.webp" alt="Editing an inventory item and its deliveries" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/sport.webp"><img src="assets/gallery/thumbs/sport.webp" alt="Sport page with daily activity and routines" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/walk.webp"><img src="assets/gallery/thumbs/walk.webp" alt="Walk with route map and glucose, heart rate and speed trends" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/jog.webp"><img src="assets/gallery/thumbs/jog.webp" alt="Jog with route, trends and pace per kilometre" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/routine-result.webp"><img src="assets/gallery/thumbs/routine-result.webp" alt="Result of a finished routine" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/routine-edit.webp"><img src="assets/gallery/thumbs/routine-edit.webp" alt="Editing a training routine" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/routine-running.webp"><img src="assets/gallery/thumbs/routine-running.webp" alt="Running routine with live glucose and heart rate" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/exercise-stats.webp"><img src="assets/gallery/thumbs/exercise-stats.webp" alt="Exercise statistics and routines compared" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/exercises.webp"><img src="assets/gallery/thumbs/exercises.webp" alt="List of exercises" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/calendar.webp"><img src="assets/gallery/thumbs/calendar.webp" alt="Training calendar" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/nutrition.webp"><img src="assets/gallery/thumbs/nutrition.webp" alt="Nutrition page with carbs, hydration and meals" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/all-values.webp"><img src="assets/gallery/thumbs/all-values.webp" alt="All health values at a glance" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/sleep.webp"><img src="assets/gallery/thumbs/sleep.webp" alt="Sleep index, phases and timeline" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/weight.webp"><img src="assets/gallery/thumbs/weight.webp" alt="Weight history" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/bolus-history.webp"><img src="assets/gallery/thumbs/bolus-history.webp" alt="Bolus history" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/heart-rate.webp"><img src="assets/gallery/thumbs/heart-rate.webp" alt="Heart rate over the day" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/customize-boxes.webp"><img src="assets/gallery/thumbs/customize-boxes.webp" alt="Choosing and ordering the boxes on the overview" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/activity-settings.webp"><img src="assets/gallery/thumbs/activity-settings.webp" alt="Activity settings and daily goals" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/analysis-ranges.webp"><img src="assets/gallery/thumbs/analysis-ranges.webp" alt="Analysis: time in ranges" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/analysis-patterns.webp"><img src="assets/gallery/thumbs/analysis-patterns.webp" alt="Analysis: average glucose by time of day" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/analysis-metrics.webp"><img src="assets/gallery/thumbs/analysis-metrics.webp" alt="Analysis: metrics like GMI and variability" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/analysis-history.webp"><img src="assets/gallery/thumbs/analysis-history.webp" alt="Analysis: glucose history" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/analysis-events.webp"><img src="assets/gallery/thumbs/analysis-events.webp" alt="Analysis: alarm and event history" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/analysis-forecast.webp"><img src="assets/gallery/thumbs/analysis-forecast.webp" alt="Analysis: forecast accuracy" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/profile.webp"><img src="assets/gallery/thumbs/profile.webp" alt="Profile and settings" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/settings-glucose.webp"><img src="assets/gallery/thumbs/settings-glucose.webp" alt="Glucose unit, target range and alarms" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/settings-bolus.webp"><img src="assets/gallery/thumbs/settings-bolus.webp" alt="Bolus settings" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/settings-basal.webp"><img src="assets/gallery/thumbs/settings-basal.webp" alt="Basal rate profiles" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/settings-basal-edit.webp"><img src="assets/gallery/thumbs/settings-basal-edit.webp" alt="Editing a basal rate profile" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/settings-notifications.webp"><img src="assets/gallery/thumbs/settings-notifications.webp" alt="Notification settings" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/settings-alarm-tones.webp"><img src="assets/gallery/thumbs/settings-alarm-tones.webp" alt="Alarm tones" width="300" height="667" loading="lazy"></a>
-          <a href="assets/gallery/settings-automation.webp"><img src="assets/gallery/thumbs/settings-automation.webp" alt="Automated delivery limits" width="300" height="667" loading="lazy"></a>
+        <div class="section-head reveal">
+          <div>
+            <span class="label" data-i18n="screens.label"></span>
+            <h2 data-i18n="screens.title"></h2>
+          </div>
+          <div class="strip-controls">
+            <div class="strip-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <button class="strip-btn strip-prev" type="button" aria-label="Previous" data-i18n-attr="aria-label:screens.prev"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+            <button class="strip-btn strip-next" type="button" aria-label="Next" data-i18n-attr="aria-label:screens.next"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+          </div>
         </div>
-        <button class="icon-btn gallery-next" type="button" aria-label="Next" data-i18n-attr="aria-label:screens.next"><i class="ph ph-caret-right"></i></button>
+        <div class="strip" data-shots="https://insulink-app.github.io/insulink-app/screenshots/">
+          <figure>
+            <a data-shot="overview"><img data-shot="overview" alt="" data-i18n-attr="alt:screens.overview.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.overview.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="glucose"><img data-shot="glucose" alt="" data-i18n-attr="alt:screens.glucose.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.glucose.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="bolus-calculator"><img data-shot="bolus-calculator" alt="" data-i18n-attr="alt:screens.bolus-calculator.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.bolus-calculator.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="sensor"><img data-shot="sensor" alt="" data-i18n-attr="alt:screens.sensor.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.sensor.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="sensor-history"><img data-shot="sensor-history" alt="" data-i18n-attr="alt:screens.sensor-history.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.sensor-history.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="pump"><img data-shot="pump" alt="" data-i18n-attr="alt:screens.pump.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.pump.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="pump-history"><img data-shot="pump-history" alt="" data-i18n-attr="alt:screens.pump-history.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.pump-history.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="insulin-delivered"><img data-shot="insulin-delivered" alt="" data-i18n-attr="alt:screens.insulin-delivered.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.insulin-delivered.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="loop-journal"><img data-shot="loop-journal" alt="" data-i18n-attr="alt:screens.loop-journal.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.loop-journal.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="connections"><img data-shot="connections" alt="" data-i18n-attr="alt:screens.connections.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.connections.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="reception"><img data-shot="reception" alt="" data-i18n-attr="alt:screens.reception.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.reception.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="all-values"><img data-shot="all-values" alt="" data-i18n-attr="alt:screens.all-values.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.all-values.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="hba1c"><img data-shot="hba1c" alt="" data-i18n-attr="alt:screens.hba1c.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.hba1c.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="analysis-ranges"><img data-shot="analysis-ranges" alt="" data-i18n-attr="alt:screens.analysis-ranges.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.analysis-ranges.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="analysis-patterns"><img data-shot="analysis-patterns" alt="" data-i18n-attr="alt:screens.analysis-patterns.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.analysis-patterns.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="analysis-averages"><img data-shot="analysis-averages" alt="" data-i18n-attr="alt:screens.analysis-averages.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.analysis-averages.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="analysis-history"><img data-shot="analysis-history" alt="" data-i18n-attr="alt:screens.analysis-history.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.analysis-history.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="analysis-events"><img data-shot="analysis-events" alt="" data-i18n-attr="alt:screens.analysis-events.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.analysis-events.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="analysis-forecast"><img data-shot="analysis-forecast" alt="" data-i18n-attr="alt:screens.analysis-forecast.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.analysis-forecast.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="sport"><img data-shot="sport" alt="" data-i18n-attr="alt:screens.sport.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.sport.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="walk"><img data-shot="walk" alt="" data-i18n-attr="alt:screens.walk.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.walk.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="jog"><img data-shot="jog" alt="" data-i18n-attr="alt:screens.jog.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.jog.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="ride"><img data-shot="ride" alt="" data-i18n-attr="alt:screens.ride.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.ride.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="routine-edit"><img data-shot="routine-edit" alt="" data-i18n-attr="alt:screens.routine-edit.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.routine-edit.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="workout-result"><img data-shot="workout-result" alt="" data-i18n-attr="alt:screens.workout-result.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.workout-result.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="exercise-stats"><img data-shot="exercise-stats" alt="" data-i18n-attr="alt:screens.exercise-stats.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.exercise-stats.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="exercises"><img data-shot="exercises" alt="" data-i18n-attr="alt:screens.exercises.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.exercises.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="calendar"><img data-shot="calendar" alt="" data-i18n-attr="alt:screens.calendar.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.calendar.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="activity-log"><img data-shot="activity-log" alt="" data-i18n-attr="alt:screens.activity-log.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.activity-log.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="steps"><img data-shot="steps" alt="" data-i18n-attr="alt:screens.steps.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.steps.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="weight"><img data-shot="weight" alt="" data-i18n-attr="alt:screens.weight.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.weight.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="heart-rate"><img data-shot="heart-rate" alt="" data-i18n-attr="alt:screens.heart-rate.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.heart-rate.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="resting-heart-rate"><img data-shot="resting-heart-rate" alt="" data-i18n-attr="alt:screens.resting-heart-rate.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.resting-heart-rate.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="sleep"><img data-shot="sleep" alt="" data-i18n-attr="alt:screens.sleep.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.sleep.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="nutrition"><img data-shot="nutrition" alt="" data-i18n-attr="alt:screens.nutrition.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.nutrition.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="meals"><img data-shot="meals" alt="" data-i18n-attr="alt:screens.meals.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.meals.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="carbs"><img data-shot="carbs" alt="" data-i18n-attr="alt:screens.carbs.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.carbs.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="inventory"><img data-shot="inventory" alt="" data-i18n-attr="alt:screens.inventory.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.inventory.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="inventory-calendar"><img data-shot="inventory-calendar" alt="" data-i18n-attr="alt:screens.inventory-calendar.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.inventory-calendar.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="profile"><img data-shot="profile" alt="" data-i18n-attr="alt:screens.profile.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.profile.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="settings-glucose"><img data-shot="settings-glucose" alt="" data-i18n-attr="alt:screens.settings-glucose.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.settings-glucose.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="settings-bolus"><img data-shot="settings-bolus" alt="" data-i18n-attr="alt:screens.settings-bolus.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.settings-bolus.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="settings-basal"><img data-shot="settings-basal" alt="" data-i18n-attr="alt:screens.settings-basal.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.settings-basal.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="settings-notifications"><img data-shot="settings-notifications" alt="" data-i18n-attr="alt:screens.settings-notifications.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.settings-notifications.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="settings-alarm-tones"><img data-shot="settings-alarm-tones" alt="" data-i18n-attr="alt:screens.settings-alarm-tones.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.settings-alarm-tones.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="settings-automation"><img data-shot="settings-automation" alt="" data-i18n-attr="alt:screens.settings-automation.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.settings-automation.title"></figcaption>
+          </figure>
+          <figure>
+            <a data-shot="settings-security"><img data-shot="settings-security" alt="" data-i18n-attr="alt:screens.settings-security.title" width="230" height="498" loading="lazy"></a>
+            <figcaption data-i18n="screens.settings-security.title"></figcaption>
+          </figure>
         </div>
       </div>
-      <dialog class="lightbox" aria-label="Screenshots" data-i18n-attr="aria-label:screens.eyebrow">
+      <dialog class="lightbox" aria-label="Screens" data-i18n-attr="aria-label:screens.label">
         <div class="lightbox-track"></div>
-        <button class="icon-btn lightbox-close" type="button" aria-label="Close" data-i18n-attr="aria-label:screens.close"><i class="ph ph-x"></i></button>
-        <button class="icon-btn lightbox-prev" type="button" aria-label="Previous" data-i18n-attr="aria-label:screens.prev"><i class="ph ph-caret-left"></i></button>
-        <button class="icon-btn lightbox-next" type="button" aria-label="Next" data-i18n-attr="aria-label:screens.next"><i class="ph ph-caret-right"></i></button>
+        <button class="strip-btn lightbox-close" type="button" aria-label="Close" data-i18n-attr="aria-label:screens.close"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+        <button class="strip-btn lightbox-prev" type="button" aria-label="Previous" data-i18n-attr="aria-label:screens.prev"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+        <button class="strip-btn lightbox-next" type="button" aria-label="Next" data-i18n-attr="aria-label:screens.next"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
       </dialog>
     </section>
 
     <!-- FAQ -->
-    <section id="faq">
-      <div class="wrap">
-        <span class="eyebrow reveal" data-i18n="faq.eyebrow">FAQ</span>
-        <h2 class="section-title reveal" data-i18n="faq.title">Good to know</h2>
+    <section id="faq" class="faq-section">
+      <div class="wrap faq-layout">
+        <div class="faq-intro reveal">
+          <span class="label" data-i18n="faq.label"></span>
+          <h2 data-i18n="faq.title"></h2>
+          <p data-i18n="faq.missing"></p>
+          <a class="btn btn-small faq-ask" href="https://github.com/insulink-app/insulink-app/issues"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.5 5.5 2.8 5.5 2.8a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 4 9.2c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V21"/></svg><span data-i18n="faq.ask"></span></a>
+        </div>
         <div class="faq reveal">
-          <details open><summary data-i18n="faq.q1">Is Insulink a medical device?</summary><p data-i18n="faq.a1"></p></details>
-          <details><summary data-i18n="faq.q2">Which sensors are supported?</summary><p data-i18n="faq.a2"></p></details>
-          <details><summary data-i18n="faq.q3">Is it open source?</summary><p data-i18n="faq.a3"></p></details>
-          <details><summary data-i18n="faq.q4">Is my data safe?</summary><p data-i18n="faq.a4"></p></details>
-          <details><summary data-i18n="faq.q5">What does it cost?</summary><p data-i18n="faq.a5"></p></details>
+          <details open>
+            <summary><span data-i18n="faq.q1"></span><span class="faq-sign" aria-hidden="true"><svg class="icon plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><svg class="icon minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14"/></svg></span></summary>
+            <p data-i18n="faq.a1"></p>
+          </details>
+          <details>
+            <summary><span data-i18n="faq.q2"></span><span class="faq-sign" aria-hidden="true"><svg class="icon plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><svg class="icon minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14"/></svg></span></summary>
+            <p data-i18n="faq.a2"></p>
+          </details>
+          <details>
+            <summary><span data-i18n="faq.q3"></span><span class="faq-sign" aria-hidden="true"><svg class="icon plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><svg class="icon minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14"/></svg></span></summary>
+            <p data-i18n="faq.a3"></p>
+          </details>
+          <details>
+            <summary><span data-i18n="faq.q4"></span><span class="faq-sign" aria-hidden="true"><svg class="icon plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><svg class="icon minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14"/></svg></span></summary>
+            <p data-i18n="faq.a4"></p>
+          </details>
+          <details>
+            <summary><span data-i18n="faq.q5"></span><span class="faq-sign" aria-hidden="true"><svg class="icon plus" width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><svg class="icon minus" width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14"/></svg></span></summary>
+            <p data-i18n="faq.a5"></p>
+          </details>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section>
-      <div class="wrap">
+    <section class="cta">
+      <div class="wrap wrap-wide">
         <div class="cta-box reveal">
-          <h2 data-i18n="cta.title">Ready to own your data?</h2>
-          <p data-i18n="cta.lead">Sign in to your Insulink panel and see your glucose the open way.</p>
-          <div class="cta-row" style="justify-content:center;display:flex;gap:14px;flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://panel.insulink.de" data-i18n="cta.primary">Open the panel</a>
-            <a class="btn" href="https://github.com/insulink-app" data-i18n="cta.secondary">View on GitHub</a>
+          <svg class="cta-rings" viewBox="0 0 900 900" aria-hidden="true"><circle cx="450" cy="450" r="180"/><circle cx="450" cy="450" r="270"/><circle cx="450" cy="450" r="360"/><circle cx="450" cy="450" r="450"/></svg>
+          <div class="cta-content">
+            <span class="cta-logo"><svg class="icon" width="34" height="34" viewBox="0 0 24 24" stroke-width="2.4" aria-hidden="true"><path d="M7.5 8.5c-2 0-3.5 1.6-3.5 3.5s1.5 3.5 3.5 3.5c3.5 0 5.5-7 9-7 2 0 3.5 1.6 3.5 3.5s-1.5 3.5-3.5 3.5c-3.5 0-5.5-7-9-7z"/></svg></span>
+            <h2 data-i18n-html="cta.title"></h2>
+            <p data-i18n="cta.lead"></p>
+            <div class="button-row">
+              <a class="btn btn-ink" href="https://panel.insulink.de" data-i18n="hero.cta_primary"></a>
+              <a class="btn btn-ink-soft" href="https://github.com/insulink-app"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.5 5.5 2.8 5.5 2.8a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 4 9.2c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V21"/></svg>GitHub</a>
+            </div>
           </div>
         </div>
       </div>
@@ -329,42 +611,34 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a class="brand" href="#top"><img src="assets/img/logo-white.png" alt="Insulink logo">Insulink</a>
-          <p data-i18n="footer.tagline">A fully open-source glucose ecosystem.</p>
-        </div>
-        <div class="footer-cols">
-          <div class="footer-col">
-            <h3 data-i18n="footer.col.product">Product</h3>
-            <a href="#features" data-i18n="nav.features">Features</a>
-            <a href="#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a>
-            <a href="#screens" data-i18n="nav.screens">Screenshots</a>
-            <a href="https://panel.insulink.de" data-i18n="footer.link.panel">Panel</a>
-          </div>
-          <div class="footer-col">
-            <h3 data-i18n="footer.col.project">Project</h3>
-            <a href="#how" data-i18n="nav.how">How it works</a>
-            <a href="#faq" data-i18n="nav.faq">FAQ</a>
-            <a href="https://github.com/insulink-app" data-i18n="footer.link.github">GitHub</a>
-          </div>
-          <div class="footer-col">
-            <h3 data-i18n="footer.col.legal">Legal</h3>
-            <a href="imprint.html" data-i18n="footer.imprint">Imprint</a>
-            <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
-          </div>
-        </div>
+    <div class="wrap footer-layout">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><svg class="icon" width="26" height="26" viewBox="0 0 24 24" stroke-width="2.4" aria-hidden="true"><path d="M7.5 8.5c-2 0-3.5 1.6-3.5 3.5s1.5 3.5 3.5 3.5c3.5 0 5.5-7 9-7 2 0 3.5 1.6 3.5 3.5s-1.5 3.5-3.5 3.5c-3.5 0-5.5-7-9-7z"/></svg>Insulink</a>
+        <p data-i18n="footer.tagline"></p>
       </div>
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> Insulink · <span data-i18n="footer.rights">All rights reserved.</span></span>
-        <span data-i18n="footer.made">Made with ❤️ in Germany</span>
+      <div class="footer-cols">
+        <nav aria-label="Product" data-i18n-attr="aria-label:footer.col.product">
+          <span class="footer-title" data-i18n="footer.col.product"></span>
+          <a href="https://github.com/insulink-app/insulink-app">App</a>
+          <a href="https://panel.insulink.de">Panel</a>
+          <a href="https://github.com/insulink-app/insulink-api">API</a>
+          <a href="https://github.com/insulink-app/insulink-predictor">Predictor</a>
+        </nav>
+        <nav aria-label="Project" data-i18n-attr="aria-label:footer.col.project">
+          <span class="footer-title" data-i18n="footer.col.project"></span>
+          <a href="https://github.com/insulink-app">GitHub</a>
+          <a href="https://github.com/insulink-app/insulink-app/blob/main/LICENSE" data-i18n="footer.license"></a>
+          <a href="https://github.com/insulink-app/insulink-app/blob/main/CONTRIBUTING.md" data-i18n="footer.contribute"></a>
+        </nav>
+        <nav aria-label="Legal" data-i18n-attr="aria-label:footer.col.legal">
+          <span class="footer-title" data-i18n="footer.col.legal"></span>
+          <a href="privacy.html" data-i18n="footer.privacy"></a>
+          <a href="imprint.html" data-i18n="footer.imprint"></a>
+        </nav>
       </div>
-      <p class="footer-disclaimer" data-i18n="footer.disclaimer">Insulink is an independent, open-source interoperability project and is not a medical device.</p>
     </div>
   </footer>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

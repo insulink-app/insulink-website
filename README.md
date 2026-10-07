@@ -16,14 +16,27 @@ privacy.html        Privacy policy (legal text — English)
 CNAME               insulink.de
 assets/css/style.css
 assets/js/i18n.js   DE/EN dictionary
-assets/js/main.js   theme, language, nav, scroll reveal
+assets/js/main.js   theme, language, screens strip, data flow, scroll reveal
 assets/img/         logo + icon (from the app, downscaled), social.jpg (link preview)
-assets/fonts/       Phosphor icon subset (only the glyphs the site uses)
-assets/gallery/     app screenshots (WebP) for the gallery
+assets/fonts/       Phosphor icon subset (sun and moon on the legal pages)
+design/website/     the redesign: WEBSITE.md, target images, reference HTML
 robots.txt, sitemap.xml
 ```
 
-No build step. Pure HTML/CSS/JS; text fonts via Google Fonts.
+No build step. Pure HTML/CSS/JS; Atkinson Hyperlegible Next via Google Fonts.
+Every colour is a token at the top of `style.css` (dark and light, taken from the
+app's `insulink_colors.dart`); components only use `var(--…)`.
+
+### Screens
+
+The "Screens" strip shows the app's own screenshots, which the app's CI takes
+from its demo on every push to `main` and publishes next to the web demo
+(`insulink-app/docs/SCREENSHOTS.md`):
+`https://insulink-app.github.io/insulink-app/screenshots/<lang>-<theme>/<name>.png`.
+`main.js` (`syncScreens`) picks the folder for the page's language and theme. To
+show another screen, add a `<figure>` with its `data-shot` name to `index.html`
+and its `screens.<name>.title` / `.text` to `i18n.js`; the name must be one the
+app's screenshot test takes.
 
 ### Icons
 
