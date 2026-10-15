@@ -43,12 +43,19 @@
 
   /** The screens are the app's own screenshots, published by its CI next to
       the demo for every language and theme (insulink-app docs/SCREENSHOTS.md);
-      like the demo they follow the page's language and theme. */
+      the panel window shows the panel's newest overview, published the same
+      way (insulink-panel docs/SCREENSHOTS.md). Both follow the page's language
+      and theme. */
   function syncScreens() {
+    var root = document.documentElement;
+    var variant = root.lang + "-" + root.getAttribute("data-theme") + "/";
+    var panelShot = document.querySelector(".panel-shot");
+    if (panelShot) {
+      panelShot.src = panelShot.getAttribute("data-shots") + variant + "overview.png";
+    }
     var strip = document.querySelector(".strip");
     if (!strip) return;
-    var root = document.documentElement;
-    var folder = strip.getAttribute("data-shots") + root.lang + "-" + root.getAttribute("data-theme") + "/";
+    var folder = strip.getAttribute("data-shots") + variant;
     document.querySelectorAll("[data-shot]").forEach(function (el) {
       var url = folder + el.getAttribute("data-shot") + ".png";
       el.setAttribute(el.tagName === "A" ? "href" : "src", url);
@@ -219,12 +226,24 @@
       });
     }
 
-    // ecosystem data flow: animate only while it can be seen
-    var flow = document.querySelector(".flow");
-    if (flow && "IntersectionObserver" in window) {
+    // Zusammenspiel: the diagram's SMIL packets and the step lines run only
+    // while the section can be seen; with reduced motion the diagram rests
+    // at its start, where every packet is hidden
+    var flowSection = document.getElementById("zusammenspiel");
+    var diagram = document.querySelector(".flow-diagram");
+    if (diagram && reducedMotion.matches) {
+      diagram.pauseAnimations();
+      diagram.setCurrentTime(0);
+    } else if (diagram && "IntersectionObserver" in window) {
       new IntersectionObserver(function (entries) {
-        flow.classList.toggle("flow-live", entries[0].isIntersecting);
-      }).observe(flow);
+        var visible = entries[0].isIntersecting;
+        flowSection.classList.toggle("flow-live", visible);
+        if (visible) {
+          diagram.unpauseAnimations();
+        } else {
+          diagram.pauseAnimations();
+        }
+      }).observe(flowSection);
     }
 
     // FAQ: one answer open at a time, opening and closing slide (instant with
