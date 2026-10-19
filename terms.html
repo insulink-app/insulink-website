@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <title>Terms of use — Insulink</title>
+  <link rel="canonical" href="https://insulink.de/terms.html">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/phosphor-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem("insulink-theme");
+      if (t !== "dark" && t !== "light") {
+        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="assets/img/logo-white.png" alt="Insulink logo">Insulink</a>
+      <div class="header-actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Switch theme">
+          <i class="ph ph-sun theme-sun"></i><i class="ph ph-moon theme-moon"></i>
+        </button>
+        <a class="btn" href="index.html">← Home</a>
+      </div>
+    </div>
+  </header>
+  <main class="legal">
+    <p class="lang-note">These terms are provided in English.</p>
+
+      <h1 class="text-center mt-5 mb-5">Terms of use</h1>
+
+      <h3 class="mt-5">What Insulink is</h3>
+      <p>
+        Insulink is an open-source interoperability and research project that reads your glucose sensor and talks to your insulin pump directly, so your data stay with you.
+        It is not affiliated with Dexcom, Abbott, Insulet or Google.
+      </p>
+
+      <h3 class="mt-5">Not a medical device</h3>
+      <p>
+        Insulink is not a medical device and has not been approved as one. Readings, alarms, forecasts, carbohydrate estimates and every other output can be wrong, late or missing.
+        Never base a dosing or treatment decision on Insulink alone. Always keep the manufacturer's approved app or reader and your prescribed backup ready, and follow the advice of your diabetes care team.
+        Forecasts and analyses show patterns and insights, not recommendations to act.
+      </p>
+
+      <h3 class="mt-5">Your responsibility</h3>
+      <p>
+        You use Insulink at your own risk and only for yourself. Keep your password secret and use one that you use nowhere else.
+        If your account may have been compromised, change your password at once: this signs out all other devices.
+        A pod paired with the app has to be deactivated in the app before you remove it, also after signing out or deleting your account.
+      </p>
+
+      <h3 class="mt-5">Availability</h3>
+      <p>
+        The service is provided free of charge and without any guarantee of availability. We may change or end it at any time. The app keeps working on your phone without the server, but syncing, the web panel, the forecast and the meal photo estimate need it.
+      </p>
+
+      <h3 class="mt-5">Liability</h3>
+      <p>
+        We are liable without limitation for intent and gross negligence and for injury to life, body or health. Otherwise our liability is excluded as far as the law permits.
+      </p>
+
+      <h3 class="mt-5">Your data</h3>
+      <p class="mb-5">
+        How we process your data is described in the <a href="privacy.html">privacy policy</a>. You can delete your account with all of its data at any time in the app or in the web panel.
+      </p>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Insulink</span>
+        <span>Made with ❤️ in NRW</span>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

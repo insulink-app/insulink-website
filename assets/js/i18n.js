@@ -180,7 +180,8 @@ window.I18N = {
     "footer.col.project": "Project",
     "footer.col.legal": "Legal",
     "footer.imprint": "Imprint",
-    "footer.privacy": "Privacy"
+    "footer.privacy": "Privacy",
+    "footer.terms": "Terms"
   },
 
   de: {
@@ -358,6 +359,7 @@ window.I18N = {
     "footer.col.project": "Projekt",
     "footer.col.legal": "Rechtliches",
     "footer.imprint": "Impressum",
-    "footer.privacy": "Datenschutz"
+    "footer.privacy": "Datenschutz",
+    "footer.terms": "Nutzungsbedingungen"
   }
 };
